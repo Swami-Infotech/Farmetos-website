@@ -1,0 +1,550 @@
+.navbar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    padding: 10px 20px;
+    z-index: 1000;
+}
+.touch .btn{
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: var(--theme-font);
+    font-weight: 600;
+    border-radius: 40px;
+}
+.navbar-collapse{
+    justify-content: center;
+}
+.navbar-brand img{
+    width: 100%;
+}
+.nav-item a{
+    font-family: var(--theme-font);
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    padding: 0 15px;
+}
+.carousel-item img{
+    height: 100vh;
+    object-fit: cover;
+}
+.carousel-buttons{
+    position: absolute;
+    bottom: 10px; 
+    left: 91%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.carousel-buttons i{
+    font-family: var(--theme-font);
+    font-size: 28px;
+    font-weight: 600;
+    color:#fff;
+}
+.slider-img{
+    position: relative;
+}
+.slider-cont{
+    position: absolute;
+    top: 35%;
+    left: 10%;
+}
+.slider-cont h1{
+    font-family: var(--theme-font);
+    font-size: 75px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    width: 70%;
+}
+.slider-cont p{
+    font-family: var(--theme-font);
+    color: var(--secondary-color);
+    width: 50%;
+}
+.start .btn{
+    background-color: var(--primary-color);
+    font-family: var(--theme-font);
+    color: #fff;
+    font-weight: 600;
+    font-size: 22px;
+    border-radius: 40px;
+    padding: 8px 25px;
+    box-shadow: 0px 0px 12px 0px rgb(0 0 0 / 7%);
+}
+
+/* product css start */
+.product{
+    margin: 80px 0;
+    object-fit: cover;
+}
+.nav-pills{
+    margin: 20px 0 70px 0;
+}
+.nav-pills .nav-item .nav-link{
+    font-size: 22px;
+    font-family: var(--theme-font);
+}
+.nav-pills .nav-item .nav-link.active{
+    font-size: 22px;
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    background-color: #fff !important;
+}
+.stand-img{
+    position: relative;
+}
+.stand2-img{
+    position: relative;
+}
+.cart-icon{
+    position: absolute;
+    top: 77%;
+    left: 72%;
+    transform: translate(-50% , -50%);
+}
+.cart2-icon{
+    position: absolute;
+    top: 67%;
+    left: 85%;
+    transform: translate(-50% , -50%);
+}
+.cart2-icon i{
+    font-family: var(--theme-font);
+    font-size: 20px;
+}
+.cart-icon i{
+    font-family: var(--theme-font);
+    font-size: 24px;
+}
+.stand-cont h6{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 20px;
+    margin: 10px 0;
+}
+.stand-cont p{
+    font-family: var(--theme-font);
+    font-weight: 700;
+    width: 80%;
+}
+.stand2-cont{
+    text-align: center;
+    margin: 0 0 90px 0;
+}
+.stand2-cont h6{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 10px 0;
+}
+.stand2-cont p{
+    font-family: var(--theme-font);
+    font-weight: 600;
+}
+.view-btn .btn{
+    font-family: var(--theme-font);
+    font-size: 19px;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 55px;
+    border-radius: 50px;
+}
+
+/* product css end */
+
+/* servcie css start */
+.service{
+    margin: 80px 0;
+    background-color: #FAFAFA;
+    padding: 50px 0;
+}
+.title h5{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin: 30px auto;
+    background-color: #F5F5F5;
+    width: 15%;
+    padding: 9px;
+    border-radius: 40px;
+}
+.title h2{
+    font-family: var(--theme-font);
+    color: var(--third-color);
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+}
+.title .text{
+    color: #4b4949;
+}
+.title{
+    margin: 0 0 40px 0;
+}
+.service-card .card{
+    position: relative;
+}
+
+  
+ .service-card .card img {
+    width: 100%;
+    display: block;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; 
+    background: linear-gradient(180deg, rgb(116 116 116 / 10%) 0%, rgba(1, 177, 71, 1) 100%);
+    opacity: 55%;
+  }
+  .tree-title{
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50% , 50%);
+  }
+  .tree-title h3{
+    font-family: var(--theme-font);
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+  }
+
+/* servcie css end */
+
+
+/* client css start */
+.client .title h5{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin: 30px auto;
+    background-color: #F5F5F5;
+    width: 24%;
+    padding: 9px;
+    border-radius: 40px;
+}
+.title h2{
+    font-family: var(--theme-font);
+    color: var(--third-color);
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+}
+.title .text{
+    color: #4b4949;
+}
+.client-slider .card{
+    margin: 0 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 0;
+}
+.client-logo img{
+    width: 100%;
+    height: 150px;
+}
+/* client css end */
+
+
+/* testimonial css start */
+.testimonioal{
+    margin: 80px 0;
+}
+.testimonioal .title h2{
+    font-family: var(--theme-font);
+    width: 40%;
+    margin: 0  auto;
+}
+.review{
+    text-align: center;
+    background-color: #F5F5F5;
+    padding: 40px 40px;
+}
+.reviwe-icon i{
+    font-family: var(--theme-font);
+    color: #F8CF36;
+}
+.reviwe-icon ul li{
+    list-style: none;
+}
+.review-cont p{
+    font-family: var(--theme-font);
+    font-weight: 600;
+    margin: 30px 0;
+}
+.review-img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.name{
+    text-align: start;
+    margin: 0 0 0 10px;
+}
+.name h5{
+    font-family: var(--theme-font);
+    font-weight: 700;
+}
+.name h6{
+    font-family: var(--theme-font);
+    color: #4b4949;
+    font-weight: 500;
+}
+.review-img{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+/* testimonial css end */
+
+/* blogs css start */
+.blog{
+    position: relative;
+}
+.blog .card{
+    box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.76);
+    border: 0;
+}
+.card-title{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 18px;
+}
+.card-titles{
+    font-family: var(--theme-font);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 30px 0;
+}
+.card-text {
+    font-family: var(--theme-font);
+    font-weight: 600;
+    font-size: 18px;
+    color: #969494;
+}
+.reviwer{
+    margin: 20px 0 0 0 ;
+}
+.re-img img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.re-img h5{
+    font-family: var(--theme-font);
+    font-weight: 600;
+    margin:  0 0 0 5px;
+}
+.blog-left-img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.blog-left-img img{
+    width: 90%;
+}
+/* blogs css end */
+
+/* touch css start */
+.get{
+    margin: 80px 0;
+    background-color: #FAFAFA;
+    padding: 50px 0;
+}
+.title h3{
+    font-family: var(--theme-font);
+    font-size: 40px;
+    font-weight: 600;
+}
+.title p{
+    font-family: var(--theme-font);
+    font-weight: 600;
+    color: #969494;
+}
+.user-input{
+    position: relative;
+    box-shadow: 0px 0px 11px -4px rgba(0,0,0,0.30);
+}
+.form-control{
+    padding: 7px 33px;
+}
+.user-icon{
+    position: absolute;
+    top: 46%;
+    left: 3%;
+    transform: translate(-50%, -50%);
+}
+.user-icon i{
+    font-size: 20px;
+    color: var(--primary-color);
+}
+.submit{
+    background-color: var(--primary-color);
+    text-align: center;
+    font-family: var(--theme-font);
+}
+.submit .btn{
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+.touch-map{
+    margin: 10%;
+}
+.touch-map iframe{
+    width: 100%;
+    height: 50vh;
+}
+/* touch css end */
+
+/* footer css start */
+.foot{
+    background-color: #303840;
+    padding: 20px 0;
+}
+.farmetos-logo{
+    text-align: center;
+}
+.farmetos-logo p{
+    color: var(--secondary-color);
+}
+.links h4{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+.links ul li{
+    list-style: none;
+    color: var(--secondary-color);
+    padding: 8px 0;
+    font-family: var(--theme-font);
+    font-weight: 600;
+}
+.links ul{
+    padding: 0 0 0 0;
+}
+.fb{
+    background-color: #303840;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    text-align: center;
+    font-size: 22px;
+    padding: 6px 0;
+    
+}
+.fb i{
+    color: var(--primary-color);
+}
+.inst{
+    background-color: #303840;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    text-align: center;
+    font-size: 22px;
+    padding: 6px 0;
+    margin: 0 15px 0 15px;
+}
+.inst i{
+    color: var(--primary-color);
+}
+.twit{
+    background-color: #303840;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    text-align: center;
+    font-size: 22px;
+    padding: 6px 0;
+}
+.twit i{
+    color: var(--primary-color);
+}
+/* footer css end */
+
+
+@media (max-width:768px) {
+ .title h5 {
+    width: 30%;
+ }
+
+    .nav-pills .nav-item .nav-link.active{
+        font-size: 20px;
+    }
+    .nav-pills .nav-item .nav-link{
+        font-size: 20px;
+    }
+    .cart-icon {
+        position: absolute;
+        top: 64%;
+        left: 91%;
+        transform: translate(-50%, -50%);
+    }
+    .cart2-icon {
+        position: absolute;
+        top: 35%;
+        left: 82%;
+        transform: translate(-50%, -50%);
+    }
+    .tree-title{
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+    .client .title h5{
+        width: 37%;
+        padding: 12px;
+    }
+    .testimonioal .title h2{
+        width: 65%;
+    }
+    .links ul  li {
+        list-style: none;
+        color: var(--secondary-color);
+        padding: 2px 0;
+        font-family: var(--theme-font);
+        font-weight: 600;
+    }
+    .touch-map iframe {
+        width: 116%;
+        height: 72vh;
+    }
+    .title h2 {
+        font-family: var(--theme-font);
+        color: var(--third-color);
+        font-size: 42px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .blog-left-img{
+        display: none;
+    }
+    .user-icon {
+        position: absolute;
+        top: 46%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+    }
+}

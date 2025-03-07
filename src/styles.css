@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+body{
+    font-family: "Lora", serif;
+}
+
+:root{
+    --theme-font:"Lora", serif;
+    --primary-color:#01B147;
+    --secondary-color:#FFFFFF;
+    --third-color:#000000
+}

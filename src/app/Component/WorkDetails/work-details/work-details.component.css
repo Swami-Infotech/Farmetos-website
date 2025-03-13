@@ -1,0 +1,32 @@
+.work-bg{
+    width: 100%;  
+    height: 50vh; 
+    overflow: hidden;
+    position: relative;
+}
+.work-bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    overflow: hidden;
+}
+.work-cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+.work-cont h2{
+    font-family: var(--theme-font);
+    font-weight: 600;
+    font-size: 40px;
+}
+.details{
+    margin: 70px 0;
+}
+.work-conts h6{
+    font-family: var(--theme-font);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+}

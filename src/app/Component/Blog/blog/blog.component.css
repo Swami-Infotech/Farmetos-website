@@ -1,0 +1,397 @@
+.bg-blog {
+    width: 100%;  
+    height: 50vh; 
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-blog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    overflow: hidden;
+}
+
+.blog-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.blog-title h2{
+    font-size: 40px;
+    font-family: var(--theme-font);
+    font-weight: 700;
+}
+.card-title{
+    font-family: var(--theme-font);
+    font-weight: 600;
+    font-size: 28px;
+    width: 75%;
+}
+.card-text{
+    font-family: var(--theme-font);
+    font-size: 16px;
+    font-weight: 500;
+}
+.comment{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+}
+.blogs{
+    margin: 50px 0;
+}
+.blogs .card{
+    border: 0;
+    background-color: #F5F5F5;
+}
+.blogs-img{
+    position: relative;
+}
+.date{
+    position: absolute;
+    top: 20%;
+    left: 22%;
+    transform: translate(-50% , -50%);
+    background: rgb(0 0 0 / 29%);
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+.date h5{
+    width: 50%;
+    margin: 10px auto;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--theme-font);
+}
+
+
+
+@media (max-width:1024px) {
+    .date {
+        position: absolute;
+        top: 20%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+}
+@media (max-width:768px) {
+    .date {
+        position: absolute;
+        top: 13%;
+        left: 13%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+    .blogs-img img{
+        width: 99%;
+    }
+   }
+   @media (max-width:758px) {
+    .date {
+        position: absolute;
+        top: 13%;
+        left: 13%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+    .blogs-img img{
+        width: 99%;
+    }
+   }
+   @media (max-width:700px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   @media (max-width:668px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   @media (max-width:600px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   @media (max-width:500px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   
+   @media (max-width:485px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   
+   @media (max-width:475px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   
+   @media (max-width:465px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   
+ 
+   
+   @media (max-width:455px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   
+   @media (max-width:434px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   
+   @media (max-width:426px){
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }
+   
+   @media (max-width:412px) {
+    .date {
+        position: absolute;
+        top: 9%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background: rgb(0 0 0 / 29%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+    }
+    .date h5 {
+        width: 56%;
+        margin: 5px auto;
+        color: #FFF;
+        text-align: center;
+        font-family: var(--theme-font);
+    }
+   }

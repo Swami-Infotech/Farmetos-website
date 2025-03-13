@@ -52,41 +52,10 @@
     </div>
   </div>
 
-
-  <nav class="navbar navbar-expand-lg ">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../../../../assets/image/logo/logo.png" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav  mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About US</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Our Product</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Our Work</a>
-          </li>
-        </ul>
-      </div>
-      <div class="touch">
-        <button class="btn" type="submit">Get In Touch</button>
-      </div>
-     
-    </div>
-  </nav>
+  <!-- header start -->
+<app-header></app-header>
+<!-- header end -->
+ 
   <!-- slider end -->
 </div>
 <!-- slider & heade section end -->
@@ -243,7 +212,7 @@
 
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="view-btn text-center">
-                  <button class="btn">View All</button>
+                  <button class="btn" [routerLink]="'/ProductList'">View All</button>
                 </div>
               </div>
             </div>
@@ -1270,67 +1239,6 @@
 <!-- get into tocuh section end -->
 
 <!-- footer section start -->
- <section class="foot">
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-12">
-          <div class="farmetos-logo">
-            <img src="../../../../assets/image/logo/foot.png" alt="Footer-logo" class="img-fluid mb-3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit reprehenderit aspernatur, libero sapiente animi quod?</p>
-          </div>
-          <div class="social-icon d-flex flex-wrap align-items-center justify-content-center my-4">
-            <div class="fb">
-              <i class="bi bi-facebook"></i>
-            </div>
-            <div class="inst">
-              <i class="bi bi-instagram"></i>
-            </div>
-            <div class="twit">
-              <i class="bi bi-twitter-x"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-12">
-          <div class="links">
-            <h4>Useful Links</h4>
-
-            <ul>
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Our Product</li>
-              <li>Blogs</li>
-              <li>Our Work</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-12">
-          <div class="links">
-            <h4>Support</h4>
-
-            <ul>
-              <li>Privacy & Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Refnd Policies</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-12">
-          <div class="links">
-            <h4>Company</h4>
-
-            <ul>
-              <li>Our Team</li>
-              <li>Partner With Us</li>
-              <li>FAQ</li>
-              <li>Blog</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
- </section>
-<!-- footer section end -->
+ 
+<app-footer></app-footer>
+ <!-- footer section end -->

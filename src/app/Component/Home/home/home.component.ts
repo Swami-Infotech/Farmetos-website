@@ -93,7 +93,11 @@ export class HomeComponent implements OnInit {
   navigate(categoryID: number) {
     this.route.navigate([`/ProductList/${categoryID}`]);
   }
+
   navigates(userProductID: number) {
+    this.route.navigate([`/ProductDetails/${userProductID}`]);
+  }
+  navigatess(userProductID: number) {
     this.route.navigate([`/ProductDetails/${userProductID}`]);
   }
 

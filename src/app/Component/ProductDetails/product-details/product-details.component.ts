@@ -21,6 +21,9 @@ export class ProductDetailsComponent implements OnInit {
   cartItems: any[] = [];
   ngOnInit(): void {
 
+    const storedCart = sessionStorage.getItem('cart');
+    this.cartItems = storedCart ? JSON.parse(storedCart) : []; 
+
     this.loadCart();
     this.route.paramMap.subscribe(params => {
       this.userProductID = Number(params.get('userProductID'));
@@ -115,24 +118,27 @@ export class ProductDetailsComponent implements OnInit {
 
 
     increment(index: number) {
-      if (this.cartItems[index]) {
-        this.cartItems[index].quantity += 1;
-        this.cartItems[index].totalPrice = this.cartItems[index].quantity * this.cartItems[index].price;
-        this.saveCart();
-      }
+      this.cartItems[index].quantity++;
+      this.updateCart();
     }
-    
+  
     decrement(index: number) {
-      if (this.cartItems[index].quantity > 1) {
-        this.cartItems[index].quantity -= 1;
-        this.cartItems[index].totalPrice = this.cartItems[index].quantity * (this.cartItems[index].variants?.[0]?.price || this.cartItems[index].price);
-      } else {
-        // ✅ Remove item if quantity is 0
-        this.removeFromCart(index);
+      if (this.cartItems[index].quantity > 0) {
+        this.cartItems[index].quantity--;
       }
     
+      // ✅ Update sessionStorage
       sessionStorage.setItem('cart', JSON.stringify(this.cartItems));
+    
+      // ✅ Force UI to refresh
+      this.cartItems = [...this.cartItems]; 
     }
+    
+    updateCart() {
+      sessionStorage.setItem('cart', JSON.stringify(this.cartItems));
+      this.cartItems = [...this.cartItems]; // Force UI refresh
+    }
+    
     
 
 

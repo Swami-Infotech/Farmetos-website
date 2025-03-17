@@ -28,18 +28,18 @@
         <p>{{ selectedProduct.description }}</p>
 
         <div *ngFor="let item of cartItems; let i = index">
-          <div class="counter ms-2">
+          <div class="counter ms-2" *ngIf="item.quantity > 0">
             <h6 class="coun pb-2">
               <span class="pe-3" (click)="increment(i)">
                 <i class="bi bi-plus fs-4"></i>
               </span>
-              {{ cartItems[i]?.quantity || 0 }}
+              {{ item.quantity || 0 }}
               <span class="ps-3" (click)="decrement(i)">
                 <i class="bi bi-dash fs-4"></i>
               </span>
             </h6>
           </div>
-          </div>
+        </div>
         
         
 

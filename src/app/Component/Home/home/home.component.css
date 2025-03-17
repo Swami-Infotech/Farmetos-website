@@ -37,16 +37,18 @@
     font-weight: 600;
     color: var(--secondary-color);
     width: 70%;
+    color: #000;
 }
 .slider-cont p{
     font-family: var(--theme-font);
     color: var(--secondary-color);
     width: 50%;
+    color: #000
 }
 .start .btn{
     background-color: var(--primary-color);
     font-family: var(--theme-font);
-    color: #fff;
+    color: #000;
     font-weight: 600;
     font-size: 22px;
     border-radius: 40px;
@@ -236,6 +238,13 @@
 .client-logo img{
     width: 100%;
     height: 150px;
+}
+.stand-img img{
+    width: 80%;
+    height: 500px;
+}
+.stand2-img img{
+    width: 100%;
 }
 /* client css end */
 

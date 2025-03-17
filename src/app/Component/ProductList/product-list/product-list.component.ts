@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../Header/header/header.component';
 import { FooterComponent } from '../../Footer/footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { WebService } from '../../../Service/web.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -11,17 +13,46 @@ import { CommonModule } from '@angular/common';
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+
+  products: any[] = [];
+  itemsPerPage: number = 12;  // Set how many items per page
+  currentPage: number = 0;
+  categoryID!: number;
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.categoryID = Number(params.get('categoryID'));
+      if (this.categoryID) {
+        this.getproduct(this.categoryID, this.currentPage);
+      }
+    });
+  }
+
+  constructor(private service:WebService,private route: ActivatedRoute,
+    private router: Router,){}
 
 
-  products = Array.from({ length: 30 }, (_, i) => ({
-    name: `Fox & Fern ${i + 1}`,
-    description: 'Lorem ipsum dolor sit.',
-    image: '../../../../assets/image/Product/productlist.png'
-  }));
+  getproduct(CategoryID: number, pageNumber: number){
+    this.service.getproductbycategory(CategoryID, pageNumber).subscribe(
+      (resp:any)=>{
+        this.products = resp.data;
+        console.log(resp.data);
+        
+      }
+    )
+  }
+
+  onPageChange(event: number) {
+    this.currentPage = event;
+    this.getproduct(this.categoryID, this.currentPage);
+  }
+
+  navigate(userProductID: number) {
+    this.router.navigate([`/ProductDetails/${userProductID}`]);
+  }
 
 
-  currentPage = 1;
-  itemsPerPage = 12;
+
 
 }

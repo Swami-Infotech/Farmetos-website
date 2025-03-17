@@ -6,12 +6,14 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { InterceptorService } from './Common/interceptor.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideToastr, ToastrModule } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),
     provideClientHydration(),
+    provideToastr({}), 
     provideHttpClient(), 
     provideRouter(routes),
     provideHttpClient(withInterceptorsFromDi()),

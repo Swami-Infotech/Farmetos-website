@@ -1,0 +1,199 @@
+<app-header></app-header>
+<!-- banner section start -->
+ <section class="product">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bg-product">
+                    <img src="../../../../assets/image/Product/bgproduct.jpg" alt="" class="img-fluid">
+
+                    <div class="product-title">
+                        <h2>Product Details</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+<!-- banner section end -->
+
+
+<!-- peoduct details sectoin start -->
+<section class="product-details" *ngIf="selectedProduct.variants.length > 0">
+  <div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-6" *ngFor="let variant of selectedProduct.variants;let i = index">
+      <div class="product-details">
+        <h2>{{ selectedProduct.productTitle }}</h2>
+        <img [src]="variant.variantImage"  alt="{{ selectedProduct.productTitle }}">
+        <p>{{ selectedProduct.description }}</p>
+
+        <div *ngFor="let item of cartItems; let i = index">
+          <div class="counter ms-2">
+            <h6 class="coun pb-2">
+              <span class="pe-3" (click)="increment(i)">
+                <i class="bi bi-plus fs-4"></i>
+              </span>
+              {{ cartItems[i]?.quantity || 0 }}
+              <span class="ps-3" (click)="decrement(i)">
+                <i class="bi bi-dash fs-4"></i>
+              </span>
+            </h6>
+          </div>
+          </div>
+        
+        
+
+      <div class="add-btn">
+        <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" (click)="addToCart(selectedProduct)">Add TO Cart</button>
+      </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<!-- peoduct details sectoin end -->
+
+<!-- product image start  -->
+<section class="client">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="client-slider" >
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let product of [selectedProduct]">
+                  <div class="card" (click)="selectProduct(product)">
+                    <div class="client-logo text-center">
+                      <img [src]="product.productThumbnail" [alt]="product.name">
+                    </div>
+                  </div>
+                </ng-template>
+              </owl-carousel-o>
+              
+
+
+
+
+            <!-- <owl-carousel-o [options]="customOptions">
+              <ng-template carouselSlide>
+                <div class="card">
+                  <div class="client-logo text-center" (click)="selectProduct(product)">
+                    <img src="../../../../assets/image/Product/plant&stand4.png" alt="Client Image">
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="card">
+                  <div class="client-logo text-center">
+                    <img src="../../../../assets/image/Product/plant&stand1.png" alt="Client Image">
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="card">
+                  <div class="client-logo text-center">
+                    <img src="../../../../assets/image/Product/plant&stand2.png" alt="Client Image">
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="card">
+                  <div class="client-logo text-center">
+                    <img src="../../../../assets/image/Product/plant&stand3.png" alt="Client Image">
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="card">
+                  <div class="client-logo text-center">
+                    <img src="../../../../assets/image/Product/plant&stand5.png" alt="Client Image">
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="card">
+                  <div class="client-logo text-center">
+                    <img src="../../../../assets/image/Product/plant&stand6.png" alt="Client Image">
+                  </div>
+                </div>
+              </ng-template>
+            </owl-carousel-o> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- product image end  -->
+
+
+<!-- cart modal start -->
+<!-- Right-Side Drawer -->
+<div class="offcanvas offcanvas-end custom-drawer" id="cartDrawer" tabindex="-1" aria-labelledby="cartDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartDrawerLabel">Shopping Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+      <div *ngFor="let item of cartItems; let i = index" class="cart-item d-flex flex-wrap align-item-center justify-content-between">
+        <img [src]="item.productThumbnail" alt="{{ item.productTitle }}" width="100">
+        <div>
+          <h6>{{ item.productTitle }}</h6>
+          <p>Quantity: {{ item.quantity }}</p>
+        </div>
+        <button class="btn btn-sm btn-danger" (click)="removeFromCart(i)">Remove</button>
+      </div>
+    </div>
+
+    
+    <!-- Show message when cart is empty -->
+    <ng-template #emptyCart>
+      <p>Your cart is empty</p>
+    </ng-template>
+  </div>
+
+ <div class="col-lg-12">
+  <div class="check-btn">
+    <button class="btn btn-dark" data-bs-target="#checkout" data-bs-toggle="modal">Continue</button>
+  </div>
+ </div>
+</div>
+
+<!-- cart modal end -->
+
+
+
+<!-- checout modal start -->
+<div class="modal fade" id="checkout" tabindex="-1" aria-labelledby="checkoutLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="AddCartform">
+          <div class="mb-3">
+            <label for="" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" formControlName="phoneNumber">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Address</label>
+            <input type="text" class="form-control" formControlName="address">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="PlaceOrder()" data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- checout modal end -->
+
+
+
+<app-footer></app-footer>

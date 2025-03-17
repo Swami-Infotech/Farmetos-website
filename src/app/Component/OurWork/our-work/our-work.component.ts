@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../Header/header/header.component';
 import { FooterComponent } from '../../Footer/footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { WebService } from '../../../Service/web.service';
 
 @Component({
   selector: 'app-our-work',
@@ -11,16 +12,42 @@ import { RouterLink } from '@angular/router';
   templateUrl: './our-work.component.html',
   styleUrl: './our-work.component.css'
 })
-export class OurWorkComponent {
+export class OurWorkComponent implements OnInit {
 
-  Works = Array.from({length: 20},(_, i) =>({
-    title:`Fox & Fern 11 ${i + 1}`,
-    subtitle:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, hic incidunt molestias est ipsa temporibus quos illo. Modi, fugiat earum suscipit reiciendis est velit ea doloribus.",
-    image:"../../../../assets/image/work/work1.png"
-  }))
+  work: any[] = [];
+  itemsPerPage: number = 12;  // Set how many items per page
+  currentPage: number = 0;
+  categoryID!: number;
+
+  ngOnInit(): void {
+    this.getalldata(this.currentPage)
+  }
+  
+  constructor(private service:WebService,private route: ActivatedRoute,
+      private router: Router,){}
 
 
-  currentPage = 1;
-  itemsPerPage = 6;
 
+
+
+
+  getalldata( pageNumber: number){
+    this.service.getallwork( pageNumber).subscribe(
+      (resp:any)=>{
+        this.work = resp.data;
+        console.log(resp.data);
+        
+      }
+    )
+  }
+
+  onPageChange(event: number) {
+    this.currentPage = event;
+    this.getalldata( this.currentPage);
+  }
+
+
+  navigate(workID: number) {
+    this.router.navigate([`/WorkDetails/${workID}`]);
+  }
 }

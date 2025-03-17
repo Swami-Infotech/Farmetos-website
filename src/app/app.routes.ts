@@ -8,6 +8,7 @@ import { BlogComponent } from './Component/Blog/blog/blog.component';
 import { WorkDetailsComponent } from './Component/WorkDetails/work-details/work-details.component';
 import { OurWorkComponent } from './Component/OurWork/our-work/our-work.component';
 import { AboutComponent } from './Component/AboutUs/about/about.component';
+import { ProductDetailsComponent } from './Component/ProductDetails/product-details/product-details.component';
 
 export const routes: Routes = [
     {
@@ -26,8 +27,12 @@ export const routes: Routes = [
         component:HomeComponent
       },
       {
-        path:"ProductList",
+        path:"ProductList/:categoryID",
         component:ProductListComponent
+      },
+      {
+        path:"ProductDetails/:userProductID",
+        component:ProductDetailsComponent
       },
       {
         path:"Header",
@@ -42,7 +47,7 @@ export const routes: Routes = [
         component:BlogComponent
       },
       {
-        path:"WorkDetails",
+        path:"WorkDetails/:workID",
         component:WorkDetailsComponent                                                                                                 
       },
       {

@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../Header/header/header.component';
 import { FooterComponent } from '../../Footer/footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
+import { WebService } from '../../../Service/web.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -10,18 +12,35 @@ import { CommonModule } from '@angular/common';
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
-export class BlogComponent {
+export class BlogComponent implements OnInit {
+  blog: any[] = [];
+  itemsPerPage: number = 12;  // Set how many items per page
+  currentPage: number = 0;
+  categoryID!: number;
+
+  ngOnInit(): void {
+    this.getallblog(this.currentPage);
+  }
+
+  constructor(private service:WebService,private route: ActivatedRoute,
+        private router: Router,){}
 
 
-  blogs = Array.from({ length: 20 }, (_, i) => ({
-    title: `New Roses From Star Roses & Plants ${i + 1}`,
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit...',
-    image: '../../../../assets/image/testi/blog.png',
-    date: `20 Jan`,
-    comments: Math.floor(Math.random() * 20) + 1 // Random comments count
-  }));
+        getallblog(pageNumber: number){
+          this.service.getallblog( pageNumber).subscribe(
+            (resp:any)=>{
+              this.blog = resp.data;
+              console.log(resp.data);
+              
+            }
+          )
+        }
 
-  currentPage = 1;
-  itemsPerPage = 6;
+        onPageChange(event: number) {
+          this.currentPage = event;
+          this.getallblog(this.currentPage);
+        }
+
+
 
 }

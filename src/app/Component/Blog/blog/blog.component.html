@@ -18,22 +18,22 @@
 <!-- blog section start -->
  <div class="container">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let blog of blogs | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let blog of blog | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
             <div class="blogs">
               <div class="card mb-3">
                 <div class="row g-0">
                   <div class="col-md-12 col-lg-4 col-sm-12">
                     <div class="blogs-img">
-                      <img [src]="blog.image" class="img-fluid rounded-start" alt="Blog Image">
+                      <img [src]="blog.blogThumbnail" class="img-fluid rounded-start" alt="Blog Image">
                       <div class="date">
-                        <h5>{{ blog.date }}</h5>
+                        <h5>{{ blog.createdAt | date: 'd MMM' }}</h5>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-12 col-lg-8 col-sm-12">
                     <div class="card-body">
-                      <h5 class="card-title">{{ blog.title }}</h5>
-                      <p class="card-text">{{ blog.description }}</p>
+                      <h5 class="card-title">{{ blog.blogTitle }}</h5>
+                      <p class="card-text">{{ blog.blogDescription }}</p>
                       <p class="card-text d-flex align-items-center">
                         <i class="bi bi-chat-left-dots-fill me-3 mt-2"></i>
                         <small class="comment">{{ blog.comments }} Comments</small>

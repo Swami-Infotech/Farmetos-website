@@ -22,24 +22,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-               <div class="work-conts">
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nobis rerum vero. Quod animi
-                    dolores minima illum porro impedit, sequi dolorum doloribus rem voluptas quis quisquam ex id.
-                    Molestiae sunt asperiores possimus nisi nobis quaerat omnis dolor tempora. Ducimus ipsum quibusdam
-                    laboriosam numquam non, suscipit ratione incidunt mollitia minima iste assumenda nam reiciendis
-                    similique adipisci quisquam nulla minus eius nisi.</h6>
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nobis rerum vero. Quod animi
-                    dolores minima illum porro impedit, sequi dolorum doloribus rem voluptas quis quisquam ex id.
-                    Molestiae sunt asperiores possimus nisi nobis quaerat omnis dolor tempora. Ducimus ipsum quibusdam
-                    laboriosam numquam non, suscipit ratione incidunt mollitia minima iste assumenda nam reiciendis
-                    similique adipisci quisquam nulla minus eius nisi.</h6>
+               <div class="work-conts" *ngIf=" workdeatils">
+                <h6>{{workdeatils.workTitle}}</h6>
                 <h6 class=" text-center my-3">
-                    <img src="../../../../assets/image/work/work1.png" alt="workimage">
+                    <img [src]="workdeatils.imageThumbail" alt="workimage" class="img-fluid">
                 </h6>
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut rerum laboriosam exercitationem
-                    praesentium voluptatibus voluptates esse quo saepe soluta quibusdam incidunt autem laborum voluptate
-                    consequatur, beatae aspernatur consequuntur, sapiente sit sint, quisquam inventore quod dicta! Animi
-                    rem veritatis accusantium! </h6>
+                <h6>{{workdeatils.content}}</h6>
                </div>
             </div>
         </div>

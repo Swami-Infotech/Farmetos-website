@@ -37,18 +37,18 @@
     font-weight: 600;
     color: var(--secondary-color);
     width: 70%;
-    color: #000;
+    color: #fff;
 }
 .slider-cont p{
     font-family: var(--theme-font);
     color: var(--secondary-color);
     width: 50%;
-    color: #000
+    color: #fff
 }
 .start .btn{
     background-color: var(--primary-color);
     font-family: var(--theme-font);
-    color: #000;
+    color: #fff;
     font-weight: 600;
     font-size: 22px;
     border-radius: 40px;
@@ -85,8 +85,8 @@
 }
 .cart-icon{
     position: absolute;
-    top: 77%;
-    left: 72%;
+    top: 87%;
+    left: 75%;
     transform: translate(-50% , -50%);
 }
 .cart2-icon{

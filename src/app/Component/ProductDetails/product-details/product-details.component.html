@@ -133,7 +133,7 @@
 <div class="offcanvas offcanvas-end custom-drawer" id="cartDrawer" tabindex="-1" aria-labelledby="cartDrawerLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="cartDrawerLabel">Shopping Cart</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" (click)="reloda()"></button>
   </div>
   <div class="offcanvas-body">
     <div *ngIf="cartProducts.length > 0; else emptyCart">
@@ -143,7 +143,7 @@
           <h6>{{ item.productTitle }}</h6>
           <p>Quantity: {{ item.quantity }}</p>
         </div>
-        <button class="btn btn-sm btn-danger" (click)="removeFromCart(i)">Remove</button>
+        <button class="btn btn-sm btn-danger" (click)="removeFromCart(item.userProductVariantID)">Remove</button>
       </div>
     </div>
 

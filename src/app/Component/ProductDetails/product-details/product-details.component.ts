@@ -180,20 +180,42 @@ export class ProductDetailsComponent implements OnInit {
     }
 
 
+    reloda(){
+      window.location.reload();
 
-    removeFromCart(index: number) {
+    }
+
+    removeFromCart(userProductVariantID: number) {
+      // Get the current cart from localStorage
       let cart = JSON.parse(localStorage.getItem('cartProducts') || '[]');
     
-      if (cart.length > 0) {
-        cart.splice(index, 1); // Remove item at index
+      // Find the index of the product with the given userProductID
+      const productIndex = cart.findIndex((item: any) => item.userProductVariantID === userProductVariantID);
+    
+      // Remove only the specific product if it exists
+      if (productIndex !== -1) {
+        cart.splice(productIndex, 1); // Remove only that item
       }
     
-      localStorage.setItem('cartProducts', JSON.stringify(cart)); // Update localStorage
-      // this.loadCart(); // Refresh cart list
+      // Update localStorage with the new cart data
+      localStorage.setItem('cartProducts', JSON.stringify(cart));
+    
+      // Update the cartProducts array to reflect changes in the UI
+      this.cartProducts = [...cart]; // Ensure UI updates correctly
     }
     
+    
+    
+    
 
-   
+    // removeFromCart(index: number) {
+    //   let cart = JSON.parse(localStorage.getItem('cartProducts') || '[]');
+    
+    //   cart.splice(index, 1); // Remove item at index
+    
+    //   localStorage.setItem('cartProducts', JSON.stringify(cart)); // Update localStorage
+    //   // this.getCartProducts() // Refresh cart list
+    // }
     
 
 

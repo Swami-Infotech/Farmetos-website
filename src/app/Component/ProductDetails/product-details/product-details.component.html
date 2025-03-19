@@ -7,8 +7,8 @@
                 <div class="bg-product">
                     <img src="../../../../assets/image/Product/bgproduct.jpg" alt="" class="img-fluid">
 
-                    <div class="product-title">
-                        <h2>Product Details</h2>
+                    <div class="product-title" *ngIf="productdetails">
+                        <h2>{{productdetails.productTitle}}</h2>
                     </div>
                 </div>
             </div>
@@ -19,35 +19,40 @@
 
 
 <!-- peoduct details sectoin start -->
-<section class="product-details" *ngIf="selectedProduct.variants.length > 0">
+<section class="product-details" *ngIf="selectedVariant">
   <div class="container">
-    <div class="col-lg-12 col-md-12 col-sm-6" *ngFor="let variant of selectedProduct.variants;let i = index">
-      <div class="product-details">
-        <h2>{{ selectedProduct.productTitle }}</h2>
-        <img [src]="variant.variantImage"  alt="{{ selectedProduct.productTitle }}">
-        <p>{{ selectedProduct.description }}</p>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="product-img">
+          <img [src]="selectedVariant.variantImage"  alt="{{ selectedProduct.productTitle }}">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="product-desc">
+          <p>{{selectedVariant.description}}</p>
 
-        <div *ngFor="let item of cartItems; let i = index">
-          <div class="counter ms-2" *ngIf="item.quantity > 0">
-            <h6 class="coun pb-2">
-              <span class="pe-3" (click)="increment(i)">
-                <i class="bi bi-plus fs-4"></i>
-              </span>
-              {{ item.quantity || 0 }}
-              <span class="ps-3" (click)="decrement(i)">
-                <i class="bi bi-dash fs-4"></i>
-              </span>
-            </h6>
+          <div >
+            <div class="counter ms-2" >
+              <h6 class="coun pb-2">
+                <span class="pe-3" (click)="increment()">
+                  <i class="bi bi-plus fs-4"></i>
+                </span>
+                {{ counter }}
+                <span class="ps-3" (click)="decrement()">
+                  <i class="bi bi-dash fs-4"></i>
+                </span>
+              </h6>
+            </div>
+          </div>
+          <div class="add-btn">
+            <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" (click)="addToCart(selectedVariant)">Add TO Cart</button>
           </div>
         </div>
-        
-        
-
-      <div class="add-btn">
-        <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" (click)="addToCart(selectedProduct)">Add TO Cart</button>
-      </div>
+       
       </div>
     </div>
+
+  
     
   </div>
 </section>
@@ -60,10 +65,10 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="client-slider" >
             <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide *ngFor="let product of [selectedProduct]">
-                  <div class="card" (click)="selectProduct(product)">
+                <ng-template carouselSlide *ngFor="let variant of selectedProduct.variants">
+                  <div class="card" (click)="selectProduct(variant)">
                     <div class="client-logo text-center">
-                      <img [src]="product.productThumbnail" [alt]="product.name">
+                      <img [src]="variant.variantImage" [alt]="variant.name">
                     </div>
                   </div>
                 </ng-template>
@@ -135,7 +140,7 @@
   <div class="offcanvas-body">
     <div *ngIf="cartItems.length > 0; else emptyCart">
       <div *ngFor="let item of cartItems; let i = index" class="cart-item d-flex flex-wrap align-item-center justify-content-between">
-        <img [src]="item.productThumbnail" alt="{{ item.productTitle }}" width="100">
+        <img [src]="item.variantImage" alt="{{ item.productTitle }}" width="100">
         <div>
           <h6>{{ item.productTitle }}</h6>
           <p>Quantity: {{ item.quantity }}</p>

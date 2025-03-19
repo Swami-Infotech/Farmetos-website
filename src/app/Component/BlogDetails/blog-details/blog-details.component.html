@@ -1,0 +1,46 @@
+<app-header></app-header>
+<section class="product">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bg-product">
+                    <img src="../../../../assets/image/Product/bgproduct.jpg" alt="" class="img-fluid">
+
+                    <div class="product-title" >
+                        <h2>Blog Details</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+ <!-- blog section start -->
+  <section class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="blog-img" *ngIf="blogdeatils">
+                    <img [src]="blogdeatils.blogThumbnail" alt="">
+
+                    <div class="blog-desc">
+                        <h5>{{blogdeatils.blogDescription}}</h5>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-6">
+                <div class="blog-content" *ngIf="blogdeatils">
+                    <h6 [innerHTML]="blogdeatils.blogContent"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+ <!-- blog section end -->
+
+
+
+
+<app-footer></app-footer>

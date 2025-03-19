@@ -42,5 +42,10 @@ export class BlogComponent implements OnInit {
         }
 
 
+        redirectblog(blogID: number){
+          this.router.navigate([`/BlogDetails/${blogID}`])
+        }
+
+
 
 }

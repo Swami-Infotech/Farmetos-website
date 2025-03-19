@@ -81,9 +81,12 @@ export class ProductDetailsComponent implements OnInit {
 
 
     selectedProduct: any = null;
+    selectedVariant: any = null;
 
-    selectProduct(product: any) {
-      this.selectedProduct = product; // Assign the entire product object
+
+
+    selectProduct(variant: any) {
+      this.selectedVariant = variant; 
       this.cd.detectChanges(); 
     }
 
@@ -116,22 +119,15 @@ export class ProductDetailsComponent implements OnInit {
       );
     }
 
+    public counter:number = 1;
 
-    increment(index: number) {
-      this.cartItems[index].quantity++;
-      this.updateCart();
+    public increment() {
+      this.counter++;
     }
-  
-    decrement(index: number) {
-      if (this.cartItems[index].quantity > 0) {
-        this.cartItems[index].quantity--;
+    public decrement() {
+      if (this.counter > 1) {
+        this.counter--;
       }
-    
-      // ✅ Update sessionStorage
-      sessionStorage.setItem('cart', JSON.stringify(this.cartItems));
-    
-      // ✅ Force UI to refresh
-      this.cartItems = [...this.cartItems]; 
     }
     
     updateCart() {
@@ -142,14 +138,14 @@ export class ProductDetailsComponent implements OnInit {
     
 
 
-    addToCart(product: any) {
-      if (!product) return;
+    addToCart(selectedVariant: any) {
+      if (!selectedVariant) return;
     
       // Retrieve the cart from session storage or initialize an empty array
-      let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+      let cart = JSON.parse(sessionStorage.getItem('cartItems') || '[]');
     
       // Check if the product already exists in the cart
-      let existingProduct = cart.find((item: any) => item.userProductID === product.userProductID);
+      let existingProduct = cart.find((item: any) => item.userProductID === selectedVariant.userProductID);
     
       if (existingProduct) {
         // Increase quantity if the product is already in the cart
@@ -157,9 +153,9 @@ export class ProductDetailsComponent implements OnInit {
         existingProduct.totalPrice = existingProduct.quantity * (existingProduct.variants?.[0]?.price || existingProduct.price);
       } else {
 
-        let productPrice = product.variants?.[0]?.price || product.price;
+        let productPrice = selectedVariant.variants?.[0]?.price || selectedVariant.price;
         let newProduct = {
-          ...product,
+          ...selectedVariant,
           quantity: 1,
           totalPrice: productPrice,
         };
@@ -168,7 +164,7 @@ export class ProductDetailsComponent implements OnInit {
       }
     
       // Store updated cart back in session storage
-      sessionStorage.setItem('cart', JSON.stringify(cart));
+      sessionStorage.setItem('cartItems', JSON.stringify(cart));
     
       console.log('Cart updated:', cart);
     }

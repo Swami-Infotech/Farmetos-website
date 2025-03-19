@@ -7,10 +7,11 @@ import { Router, RouterLink } from '@angular/router';
 import { WebService } from '../../../Service/web.service';
 import { ToastrNotificationService } from '../../../Common/toastr-notification.service';
 import { LoaderService } from '../../../Service/loader.service';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule,CommonModule,HeaderComponent,FooterComponent,RouterLink ],
+  imports: [CarouselModule,CommonModule,HeaderComponent,FooterComponent,ReactiveFormsModule,RouterLink ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -31,6 +32,8 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+
     this.getalldata();
 
     this.getproduct(this.selectedCategoryID, 0);
@@ -38,10 +41,28 @@ export class HomeComponent implements OnInit {
 
   constructor(private service:WebService,private toast:ToastrNotificationService,private loader:LoaderService,private route:Router){}
 
-
+  AddInquiryForm = new FormGroup({
+    inquiryName:new FormControl('',Validators.required),
+    inquiryEmail:new FormControl('',Validators.required),
+    subject : new FormControl('',Validators.required),
+    message:new FormControl('',Validators.required)    
+  })
 
   starsArray(rating: number) {
     return Array(5).fill(0); // Creates an array of 5 elements for stars
+  }
+
+  AddInquiry(){
+    this.service.Addinquiry(this.AddInquiryForm.value).subscribe(
+      (resp:any)=>{
+       if(resp.status === true){
+        this.toast.showSuccess(resp.message);
+        this.ngOnInit();
+       } else{
+        this.toast.showError(resp.message);
+       }
+      }
+    )
   }
 
   getalldata(){
@@ -58,8 +79,8 @@ export class HomeComponent implements OnInit {
           this.blog = resp.data.blogs;
           this.cat = resp.data.categories;
           if(this.cat.length > 0){
-            this.activeTab = this.cat[0].id;
-            this.getproduct(this.activeTab,1);
+            this.activeTab = this.cat[0].categoryID;
+            this.getproduct(this.activeTab,0);
           }
         }else{
           this.loader.hideLoader();
@@ -73,7 +94,6 @@ export class HomeComponent implements OnInit {
     this.service.getproductbycategory(CategoryID, pageNumber).subscribe(
       (resp:any)=>{
         this.products = resp.data;
-        console.log(resp.data);
         
       }
     )
@@ -86,6 +106,7 @@ export class HomeComponent implements OnInit {
   }
 
   setActiveTab(categoryID: number) {
+
     this.activeTab = categoryID; // Set active category
     this.getproduct(categoryID, 0); // Fetch products for selected category
   }
@@ -99,6 +120,10 @@ export class HomeComponent implements OnInit {
   }
   navigatess(userProductID: number) {
     this.route.navigate([`/ProductDetails/${userProductID}`]);
+  }
+
+  redirectblog(blogID: number){
+    this.route.navigate([`/BlogDetails/${blogID}`])
   }
 
 

@@ -48,7 +48,6 @@
                [class.active]="category.categoryID === activeTab" 
                [id]="category.categoryID + '-tab'" 
                data-bs-toggle="tab" 
-               [href]="'#' + category.id" 
                role="tab" 
                [attr.aria-controls]="category.categoryID"
                [attr.aria-selected]="category.categoryID === activeTab ? 'true' : 'false'"
@@ -65,7 +64,7 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade" 
                *ngFor="let d of products; let i = index"
-               [class.show]="i === 0" [class.active]="i === 0"
+               [class.show]="d.categoryID" [class.active]="d.categoryID"
                [attr.id]="'pane-'+i" role="tabpanel"
                [attr.aria-labelledby]="'tab-'+i">
         
@@ -74,7 +73,7 @@
               <!-- Left Side: Featured Product -->
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="stand-img">
-                  <img [src]="d.productThumbnail" alt="{{d.productTitle}}">
+                  <img [src]="d.productThumbnail" alt="{{d.productTitle}}" (click)="navigatess(d.userProductID)">
                   <div class="stand-cont">
                     <h6>{{ d.productTitle }}</h6>
                   </div>
@@ -789,17 +788,11 @@
       <ng-container *ngFor="let d of blog">
         <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="card">
-            <img [src]="d.blogThumbnail" class="card-img-top" alt="...">
+            <img [src]="d.blogThumbnail" class="card-img-top" alt="..." (click)="redirectblog(d.blogID)">
             <div class="card-body">
-              <h5 class="card-title">FEBRUARY 22, 2025</h5>
+              <h5 class="card-title">{{d.createdAt | date}}</h5>
               <h4 class="card-titles">{{d.blogTitle}}</h4>
-              <p class="card-text">{{d.blogContent}} </p>
-              <div class="reviwer">
-                <div class="re-img d-flex flex-wrap align-items-center">
-                  <img src="../../../../assets/image/testi/pexels-olly-3769021.jpg" alt="">
-                  <h5>By Joy</h5>
-                </div>
-              </div>
+              <p class="card-text">{{d.blogDescription | slice:0:250}} </p>
             </div>
           </div>
         </div>
@@ -821,10 +814,10 @@
             architecto.</p>
         </div>
         <div class="touch-fomr">
-          <form>
+          <form [formGroup]="AddInquiryForm">
             <div class="mb-4">
               <div class="user-input">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" placeholder="Your Name" formControlName="inquiryName">
                 <div class="user-icon">
                   <i class="bi bi-person-fill"></i>
                 </div>
@@ -832,7 +825,7 @@
             </div>
             <div class="mb-4">
               <div class="user-input">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" placeholder="Email" formControlName="inquiryEmail">
                 <div class="user-icon">
                   <i class="bi bi-envelope-fill"></i>
                 </div>
@@ -840,7 +833,7 @@
             </div>
             <div class="mb-4">
               <div class="user-input">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" class="form-control" placeholder="Subject" formControlName="subject">
                 <div class="user-icon">
                   <i class="bi bi-file-earmark-ppt-fill"></i>
                 </div>
@@ -848,7 +841,7 @@
             </div>
             <div class="mb-4">
               <div class="user-input">
-                <textarea type="text" class="form-control" placeholder="Message"></textarea>
+                <textarea type="text" class="form-control" placeholder="Message" formControlName="message"></textarea>
                 <div class="user-icon">
                   <i class="bi bi-chat-left-dots-fill"></i>
                 </div>
@@ -856,7 +849,7 @@
             </div>
             <div class="mb-4">
               <div class="submit">
-                <button class="btn">Submit</button>
+                <button class="btn" (click)="AddInquiry()" >Submit</button>
               </div>
             </div>
           </form>

@@ -40,5 +40,13 @@ export class WebService {
   addweblead(data:any){
     return this.http.post(this.baseurl + "Web/AddWebLead",data)
   }
+
+  Addinquiry(data:any){
+    return this.http.post(this.baseurl + "Admin/AddNewInquiry",data)
+  }
+
+  getblogbyid(blogID:number){
+    return this.http.get(this.baseurl + "Web/GetBlogById/" + blogID)
+  }
   
 }

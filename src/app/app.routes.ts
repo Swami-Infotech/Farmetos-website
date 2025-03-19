@@ -9,6 +9,7 @@ import { WorkDetailsComponent } from './Component/WorkDetails/work-details/work-
 import { OurWorkComponent } from './Component/OurWork/our-work/our-work.component';
 import { AboutComponent } from './Component/AboutUs/about/about.component';
 import { ProductDetailsComponent } from './Component/ProductDetails/product-details/product-details.component';
+import { BlogDetailsComponent } from './Component/BlogDetails/blog-details/blog-details.component';
 
 export const routes: Routes = [
     {
@@ -33,6 +34,10 @@ export const routes: Routes = [
       {
         path:"ProductDetails/:userProductID",
         component:ProductDetailsComponent
+      },
+      {
+        path:"BlogDetails/:blogID",
+        component:BlogDetailsComponent
       },
       {
         path:"Header",

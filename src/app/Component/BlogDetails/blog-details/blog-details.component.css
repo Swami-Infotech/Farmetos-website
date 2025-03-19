@@ -1,0 +1,28 @@
+.bg-product {
+    width: 100%;  
+    height: 50vh; 
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    overflow: hidden;
+}
+
+.product-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.product-title h2{
+    font-family: var(--theme-font);
+    font-size: 42px;
+    font-weight: 700;
+}
+.blog-img img{
+    width: 100%;
+}

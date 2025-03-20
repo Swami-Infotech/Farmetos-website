@@ -18,7 +18,8 @@ export class ProductDetailsComponent implements OnInit {
 
   userProductID!:number;
   AddtocartData:any[] = [];
-  products:any
+  products:any;
+
 
   ngOnInit(): void {
     // this.cartProducts = this.getCartProducts();
@@ -28,6 +29,8 @@ export class ProductDetailsComponent implements OnInit {
     // }
 
     this.loadCart();
+
+ 
 
     this.route.paramMap.subscribe(params => {
       this.userProductID = Number(params.get('userProductID'));
@@ -212,29 +215,22 @@ export class ProductDetailsComponent implements OnInit {
     }
     
     
-    
-    
-
-    // removeFromCart(index: number) {
-    //   let cart = JSON.parse(localStorage.getItem('cartProducts') || '[]');
-    
-    //   cart.splice(index, 1); // Remove item at index
-    
-    //   localStorage.setItem('cartProducts', JSON.stringify(cart)); // Update localStorage
-    //   // this.getCartProducts() // Refresh cart list
-    // }
+    updateQuantity(index: number, newQuantity: number) {
+      this.cartProducts[index].quantity = newQuantity;
+      localStorage.setItem('cartProducts', JSON.stringify(this.cartProducts));
+    }
     
 
 
 PlaceOrder() {
   // Retrieve cart data from session storage
-  const storedCart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+  const storedCart = JSON.parse(localStorage.getItem('cartProducts') || '[]');
 
   // Update the form with session storage cart items
   this.AddCartform.patchValue({
     variantListInputModels: storedCart.map((item: any) => ({
       userProductID: item.userProductID,
-      userProductVariantID: item.variants?.[0]?.userProductVariantID || 0,
+      userProductVariantID: item.userProductVariantID,
       quantity: item.quantity || 1
     }))
   });

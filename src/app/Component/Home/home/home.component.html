@@ -34,7 +34,7 @@
 <!-- slider & heade section end -->
 
 <!-- Product Section start -->
-<section class="product">
+<section class="product" id="ourproduct">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -103,560 +103,14 @@
                   </div>
                 </div>
               </div>
-
-
-       
-        
-              <!-- View All Button (Only on First Tab) -->
               <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="i === 0">
                 <div class="view-btn text-center">
-                  <button class="btn" (click)="navigate(d.categoryID)">View All</button>
+                  <button class="btn" (click)="navigate(d.categoryID,d.categoryName)">View All</button>
                 </div>
               </div>
-        
             </div>
           </div>
         </div>
-        
-
-
-        
-
-
-
-        <!-- <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" *ngFor="let d of products">
-            <div class="row" *ngIf="products.length > 0;" >
-              <div class="col-lg-6 col-md-6 col-sm-12" >
-                <div class="stand-img">
-                  <img [src]="d.productThumbnail" alt="Plant Stands & Movers"
-                    >
-                  <div class="stand-cont">
-                    <h6>{{d.productTitle}}</h6>
-                  </div>
-                  <div class="cart-icon">
-                    <button class="btn">
-                      <i class="bi bi-cart-fill"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12" >
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img [src]="d.productThumbnail" alt="Plant Stands & Movers">
-                      <div class="stand2-cont">
-                        <h6>{{d.productTitle}}</h6>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-12 col-md-12 col-sm-12" *ngFor="let d of products; let first = first">
-                <div class="view-btn text-center" *ngIf="first">
-                  <button class="btn" (click)="navigate(d.categoryID)">View All</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="stand-img">
-                  <img src="../../../../assets/image/Product/plant&stand1.png" alt="Plant Stands & Movers"
-                    class="img-fluid">
-                  <div class="stand-cont">
-                    <h6>Fox & Fern 11</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores veniam porro placeat iure
-                      consequuntur et, libero nostrum officiis.</p>
-                  </div>
-                  <div class="cart-icon">
-                    <button class="btn">
-                      <i class="bi bi-cart-fill"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand2.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand3.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand4.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
- 
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand5.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand6.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand7.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="view-btn text-center">
-                  <button class="btn">View All</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="stand-img">
-                  <img src="../../../../assets/image/Product/plant&stand1.png" alt="Plant Stands & Movers"
-                    class="img-fluid">
-                  <div class="stand-cont">
-                    <h6>Fox & Fern 11</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores veniam porro placeat iure
-                      consequuntur et, libero nostrum officiis.</p>
-                  </div>
-                  <div class="cart-icon">
-                    <button class="btn">
-                      <i class="bi bi-cart-fill"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand2.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand3.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand4.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand5.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand6.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand7.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="view-btn text-center">
-                  <button class="btn">View All</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-pane fade" id="glass" role="tabpanel" aria-labelledby="glass-tab">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="stand-img">
-                  <img src="../../../../assets/image/Product/plant&stand1.png" alt="Plant Stands & Movers"
-                    class="img-fluid">
-                  <div class="stand-cont">
-                    <h6>Fox & Fern 11</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores veniam porro placeat iure
-                      consequuntur et, libero nostrum officiis.</p>
-                  </div>
-                  <div class="cart-icon">
-                    <button class="btn">
-                      <i class="bi bi-cart-fill"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand2.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand3.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand4.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand5.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand6.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand7.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
- 
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="view-btn text-center">
-                  <button class="btn">View All</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="roto" role="tabpanel" aria-labelledby="rotomoll-tab">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="stand-img">
-                  <img src="../../../../assets/image/Product/plant&stand1.png" alt="Plant Stands & Movers"
-                    class="img-fluid">
-                  <div class="stand-cont">
-                    <h6>Fox & Fern 11</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores veniam porro placeat iure
-                      consequuntur et, libero nostrum officiis.</p>
-                  </div>
-                  <div class="cart-icon">
-                    <button class="btn">
-                      <i class="bi bi-cart-fill"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand2.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand3.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand4.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand5.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand6.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="stand2-img">
-                      <img src="../../../../assets/image/Product/plant&stand7.png" alt="Plant Stands & Movers"
-                        class="img-fluid">
-                      <div class="stand2-cont">
-                        <h6>Fox & Fern 11</h6>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div class="cart2-icon">
-                        <button class="btn">
-                          <i class="bi bi-cart-fill"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="view-btn text-center">
-                  <button class="btn">View All</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- tab content end -->
         <!-- nav tab end -->
       </div>
     </div>
@@ -675,23 +129,26 @@
           <h2 class="text">Get Into Gardening</h2>
         </div>
       </div>
-
-      <ng-container *ngFor="let d of ser">
+      <div class="col-lg-12">
+        <div class="service-slider">
+          <owl-carousel-o [options]="customOptions2" class="custom-carousel">
+            <ng-container *ngFor="let d of ser">
+              <ng-template carouselSlide>
+                <div class="service-card">
+                  <div class="card">
+                    <img [src]="d.serviceImage" alt="">
+                    <div class="overlay"></div>
           
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="service-card">
-          <div class="card">
-            <img [src]="d.serviceImage" alt="">
-            <div class="overlay"></div>
-
-            <div class="tree-title">
-              <h3>{{d.serviceText}}</h3>
-            </div>
-          </div>
-
+                    <div class="tree-title">
+                      <h3>{{ d.serviceText }}</h3>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
         </div>
       </div>
-      </ng-container>
     </div>
   </div>
 </section>
@@ -784,19 +241,24 @@
           <h2 class="text">Planters, Rooted In Plants, Inspired By Nature</h2>
         </div>
       </div>
-
-      <ng-container *ngFor="let d of blog">
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <div class="card">
-            <img [src]="d.blogThumbnail" class="card-img-top" alt="..." (click)="redirectblog(d.blogID)">
-            <div class="card-body">
-              <h5 class="card-title">{{d.createdAt | date}}</h5>
-              <h4 class="card-titles">{{d.blogTitle}}</h4>
-              <p class="card-text">{{d.blogDescription | slice:0:250}} </p>
-            </div>
-          </div>
+      <div class="col-lg-12">
+        <div class="blog-slider">
+          <owl-carousel-o [options]="customOptions3">
+            <ng-container *ngFor="let d of blog">
+              <ng-template carouselSlide>
+                <div class="card">
+                  <img [src]="d.blogThumbnail" class="card-img-top" alt="..." (click)="redirectblog(d.blogID)">
+                  <div class="card-body">
+                    <h5 class="card-title">{{d.createdAt | date}}</h5>
+                    <h4 class="card-titles">{{d.blogTitle}}</h4>
+                    <p class="card-text">{{d.blogDescription | slice:0:250}} </p>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
         </div>
-      </ng-container>
+      </div>
     </div>
   </div>
 </section>

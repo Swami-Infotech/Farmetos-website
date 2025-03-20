@@ -19,8 +19,13 @@ export class ProductListComponent implements OnInit {
   itemsPerPage: number = 12;  // Set how many items per page
   currentPage: number = 0;
   categoryID!: number;
+  categoryName: string = '';
 
   ngOnInit(): void {
+
+    this.route.queryParams.subscribe(params => {
+      this.categoryName = params['name']; 
+    });
     this.route.paramMap.subscribe(params => {
       this.categoryID = Number(params.get('categoryID'));
       if (this.categoryID) {

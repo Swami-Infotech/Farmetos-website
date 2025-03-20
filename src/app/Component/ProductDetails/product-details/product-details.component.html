@@ -22,12 +22,12 @@
 <section class="product-details" *ngIf="selectedVariant">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="product-img">
           <img [src]="selectedVariant.variantImage"  alt="{{ selectedProduct.productTitle }}">
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="product-desc">
           <p>{{selectedVariant.description}}</p>
 
@@ -41,9 +41,13 @@
                 <i class="bi bi-dash fs-4"></i>
               </span>
             </h6>
+            <div class="add-btn">
+              <button class="btn " data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" (click)="AddtocartClick(selectedVariant, quantity)">Add TO Cart</button>
+            </div>
           </div>
-          <div class="add-btn">
-            <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" (click)="AddtocartClick(selectedVariant, quantity)">Add TO Cart</button>
+          
+          <div class="product-content">
+            <p [innerHTML]="selectedVariant.productContent"></p>
           </div>
         </div>
        
@@ -142,6 +146,15 @@
         <div>
           <h6>{{ item.productTitle }}</h6>
           <p>Quantity: {{ item.quantity }}</p>
+          <h6 class="coun pb-2">
+            <span class="pe-3" (click)="updateQuantity(i, item.quantity + 1)">
+              <i class="bi bi-plus fs-4"></i>
+            </span>
+            {{ item.quantity }}
+            <span class="ps-3" (click)="updateQuantity(i, item.quantity > 1 ? item.quantity - 1 : 1)">
+              <i class="bi bi-dash fs-4"></i>
+            </span>
+          </h6>
         </div>
         <button class="btn btn-sm btn-danger" (click)="removeFromCart(item.userProductVariantID)">Remove</button>
       </div>

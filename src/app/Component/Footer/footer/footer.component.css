@@ -23,44 +23,76 @@
 .links ul{
     padding: 0 0 0 0;
 }
+.social h4{
+    font-family: var(--theme-font);
+    color: var(--primary-color);
+    font-weight: 700;
+}
 .fb{
     background-color: #303840;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 1px solid var(--primary-color);
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
     padding: 6px 0;
     
 }
 .fb i{
-    color: var(--primary-color);
+    color: #fff
 }
 .inst{
     background-color: #303840;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 1px solid var(--primary-color);
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
     padding: 6px 0;
-    margin: 0 15px 0 15px;
+    margin: 10px 0;
 }
 .inst i{
-    color: var(--primary-color);
+    color: #fff
 }
 .twit{
     background-color: #303840;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 1px solid var(--primary-color);
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
     padding: 6px 0;
 }
 .twit i{
-    color: var(--primary-color);
+    color: #fff;
+}
+.you{
+    background-color: #303840;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    text-align: center;
+    font-size: 18px;
+    padding: 6px 0;
+}
+.you i{
+    color: #ffff;
+}
+.what{
+    background-color: #303840;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    text-align: center;
+    font-size: 18px;
+    padding: 6px 0;
+    margin: 10px 0;
+}
+.what i{
+    color: #ffff;
 }

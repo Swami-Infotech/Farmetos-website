@@ -111,9 +111,19 @@ export class HomeComponent implements OnInit {
     this.getproduct(categoryID, 0); // Fetch products for selected category
   }
 
-  navigate(categoryID: number) {
-    this.route.navigate([`/ProductList/${categoryID}`]);
+  navigate(categoryID: number, categoryName?: string) {
+    console.log("Category ID:", categoryID);
+    console.log("Category Name:", categoryName);
+  
+    if (!categoryName) {
+      console.error("Category Name is undefined!");
+    }
+  
+    this.route.navigate(['/ProductList', categoryID], { 
+      queryParams: { name: categoryName || 'Unknown' } // Default to avoid undefined
+    });
   }
+  
 
   navigates(userProductID: number) {
     this.route.navigate([`/ProductDetails/${userProductID}`]);
@@ -135,6 +145,7 @@ export class HomeComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
+    autoplay:true,
     dots: false,
     navSpeed: 700,
     navText: ['<i class="bi bi-arrow-left text-dark"></i>', '<i class="bi bi-arrow-right text-dark"></i>'],
@@ -161,9 +172,10 @@ export class HomeComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
+    autoplay:true,
     dots: false,
     navSpeed: 700,
-    navText: ['<i class="bi bi-arrow-left text-dark"></i>', '<i class="bi bi-arrow-right text-dark"></i>'],
+    navText: ['<', '>'],
     responsive: {
       0: {
         items: 1
@@ -176,6 +188,60 @@ export class HomeComponent implements OnInit {
       },
       940: {
         items: 1
+      }
+    },
+    nav: true
+  }
+
+
+  customOptions2: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay:true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['<', '>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 3.5
+      }
+    },
+    nav: true
+  }
+
+
+  customOptions3: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay:true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['<', '>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 3
       }
     },
     nav: true

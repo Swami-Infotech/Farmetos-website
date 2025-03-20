@@ -21,11 +21,13 @@ export class ProductDetailsComponent implements OnInit {
   products:any
 
   ngOnInit(): void {
-    this.cartProducts = this.getCartProducts();
-    const storedCart = localStorage.getItem('cartProducts');
-    if (storedCart) {
-      this.cartProducts = JSON.parse(storedCart);
-    }
+    // this.cartProducts = this.getCartProducts();
+    // const storedCart = localStorage.getItem('cartProducts');
+    // if (storedCart) {
+    //   this.cartProducts = JSON.parse(storedCart);
+    // }
+
+    this.loadCart();
 
     this.route.paramMap.subscribe(params => {
       this.userProductID = Number(params.get('userProductID'));
@@ -141,20 +143,25 @@ export class ProductDetailsComponent implements OnInit {
     cartProducts: any[] = [];
     AddtocartClick(selectedVariant: any, quantity: number) {
       try {
-        // Retrieve existing cart or initialize an empty array
         let cart: any[] = JSON.parse(localStorage.getItem('cartProducts') || '[]');
     
-        // Check if the product already exists in the cart
-        const existingProduct = cart.find(item => item.userProductVariantID === selectedVariant.userProductVariantID);
-    
-        if (existingProduct) {
-          existingProduct.quantity += quantity; // Update quantity if product exists
-        } else {
-          cart.push({ ...selectedVariant, quantity }); // Add new product to cart
+        if (!selectedVariant || !selectedVariant.userProductVariantID) {
+          console.error('Invalid product variant:', selectedVariant);
+          return;
         }
     
-        // Save updated cart back to localStorage
+        const existingProductIndex = cart.findIndex(item => item.userProductVariantID === selectedVariant.userProductVariantID);
+    
+        if (existingProductIndex !== -1) {
+          cart[existingProductIndex].quantity += quantity;
+        } else {
+          cart.push({ ...selectedVariant, quantity });
+        }
+    
         localStorage.setItem('cartProducts', JSON.stringify(cart));
+    
+        // 🔹 Immediately update cartProducts
+        this.cartProducts = [...cart];
     
         alert('Product added to cart!');
       } catch (error) {
@@ -167,9 +174,8 @@ export class ProductDetailsComponent implements OnInit {
     
     
     
-    currentdata: any;
-    cartmaster: any;  
-    cartproductmaster: any;
+    
+    
     
     getCartProducts(): any[] {
       return JSON.parse(localStorage.getItem('cartProducts') || '[]');
@@ -202,6 +208,7 @@ export class ProductDetailsComponent implements OnInit {
     
       // Update the cartProducts array to reflect changes in the UI
       this.cartProducts = [...cart]; // Ensure UI updates correctly
+      localStorage.removeItem('cartProducts')
     }
     
     

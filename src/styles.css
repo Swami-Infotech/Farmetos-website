@@ -12,3 +12,16 @@ body{
     --secondary-color:#FFFFFF;
     --third-color:#000000
 }
+
+.what-icon{
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    transform: translate(-50%,-50%);
+    z-index: 12;
+   
+}
+.what-icon i{
+    font-size: 36px;
+    color: var(--primary-color);
+}

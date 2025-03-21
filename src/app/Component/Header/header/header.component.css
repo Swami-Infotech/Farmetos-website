@@ -28,7 +28,7 @@
     justify-content: center;
 }
 .navbar-brand img{
-    width: 100%;
+    width: 120%;
 }
 .nav-item a{
     font-family: var(--theme-font);

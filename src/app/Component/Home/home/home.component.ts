@@ -147,8 +147,8 @@ export class HomeComponent implements OnInit {
     pullDrag: true,
     autoplay:true,
     dots: false,
-    navSpeed: 700,
-    navText: ['<i class="bi bi-arrow-left text-dark"></i>', '<i class="bi bi-arrow-right text-dark"></i>'],
+    navSpeed: 100,
+    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
     responsive: {
       0: {
         items: 1
@@ -175,7 +175,7 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     dots: false,
     navSpeed: 700,
-    navText: ['<', '>'],
+    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
     responsive: {
       0: {
         items: 1
@@ -202,7 +202,7 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     dots: false,
     navSpeed: 700,
-    navText: ['<', '>'],
+    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
     responsive: {
       0: {
         items: 1
@@ -229,16 +229,16 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     dots: false,
     navSpeed: 700,
-    navText: ['<', '>'],
+    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
     responsive: {
       0: {
         items: 1
       },
       400: {
-        items: 2
+        items: 1
       },
       740: {
-        items: 3
+        items: 2
       },
       940: {
         items: 3

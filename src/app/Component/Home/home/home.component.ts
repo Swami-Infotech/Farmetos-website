@@ -26,6 +26,8 @@ export class HomeComponent implements OnInit {
 
   cartItems: any[] = [];
 
+  isViewAll: boolean = false;
+
   products:any[] = [];
   selectedCategoryID: number = 1;
   activeTab: number = 0;
@@ -39,6 +41,9 @@ export class HomeComponent implements OnInit {
     this.getproduct(this.selectedCategoryID, 0);
   }
 
+  toggleViewAll() {
+    this.isViewAll = !this.isViewAll;
+  }
   constructor(private service:WebService,private toast:ToastrNotificationService,private loader:LoaderService,private route:Router){}
 
   AddInquiryForm = new FormGroup({

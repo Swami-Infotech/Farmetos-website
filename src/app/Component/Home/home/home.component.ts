@@ -11,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule,CommonModule,HeaderComponent,FooterComponent,ReactiveFormsModule,RouterLink ],
+  imports: [CarouselModule,CommonModule,HeaderComponent,FooterComponent,ReactiveFormsModule ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

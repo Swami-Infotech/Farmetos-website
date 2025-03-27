@@ -1,20 +1,20 @@
 <app-header></app-header>
 <!-- banner section start -->
- <section class="product">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="bg-product">
-                    <img src="../../../../assets/image/Product/bgproduct.jpg" alt="" class="img-fluid">
+<section class="product">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bg-product">
+          <img src="../../../../assets/image/Product/bgproduct.jpg" alt="" class="img-fluid">
 
-                    <div class="product-title" *ngIf="productdetails">
-                        <h2>{{productdetails.productTitle}}</h2>
-                    </div>
-                </div>
-            </div>
+          <div class="product-title" *ngIf="productdetails">
+            <h2>{{productdetails.productTitle}}</h2>
+          </div>
         </div>
+      </div>
     </div>
- </section>
+  </div>
+</section>
 <!-- banner section end -->
 
 
@@ -24,12 +24,12 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="product-img">
-          <img [src]="selectedVariant.variantImage"  alt="{{ selectedProduct.productTitle }}">
+          <img [src]="selectedVariant.variantImage" alt="{{ selectedProduct.productTitle }}">
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="product-desc">
-          <p>{{selectedVariant.description}}</p>
+          <h2 style="font-size: 32px;">{{selectedVariant.description}}</h2>
 
           <div class="counter ms-2">
             <h6 class="coun pb-2">
@@ -42,45 +42,47 @@
               </span>
             </h6>
             <div class="add-btn">
-              <button class="btn " data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" (click)="AddtocartClick(selectedVariant, quantity)">Add TO Cart</button>
+              <button class="btn " data-bs-toggle="offcanvas" data-bs-target="#cartDrawer"
+                (click)="AddtocartClick(selectedVariant, quantity)">Add TO Cart</button>
             </div>
           </div>
-          
+
           <div class="product-content">
             <p [innerHTML]="selectedVariant.productContent"></p>
           </div>
         </div>
-       
+
       </div>
     </div>
 
-  
-    
+
+
   </div>
 </section>
 <!-- peoduct details sectoin end -->
 
 <!-- product image start  -->
 <section class="client">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="client-slider" >
-            <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide *ngFor="let variant of selectedProduct.variants">
-                  <div class="card" (click)="selectProduct(variant)">
-                    <div class="client-logo text-center">
-                      <img [src]="variant.variantImage" [alt]="variant.name">
-                    </div>
-                  </div>
-                </ng-template>
-              </owl-carousel-o>
-              
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="client-slider">
+          <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide *ngFor="let variant of selectedProduct.variants">
+              <div class="card" (click)="selectProduct(variant)">
+                <div class="client-logo text-center">
+                  <img [src]="variant.variantImage" [alt]="variant.name">
+                  <h5>{{variant.description | slice : 0:30}}</h5>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
 
 
 
 
-            <!-- <owl-carousel-o [options]="customOptions">
+
+          <!-- <owl-carousel-o [options]="customOptions">
               <ng-template carouselSlide>
                 <div class="card">
                   <div class="client-logo text-center" (click)="selectProduct(product)">
@@ -124,11 +126,11 @@
                 </div>
               </ng-template>
             </owl-carousel-o> -->
-          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 <!-- product image end  -->
 
 
@@ -141,7 +143,8 @@
   </div>
   <div class="offcanvas-body">
     <div *ngIf="cartProducts.length > 0; else emptyCart">
-      <div *ngFor="let item of cartProducts; let i = index" class="cart-item d-flex flex-wrap align-item-center justify-content-between">
+      <div *ngFor="let item of cartProducts; let i = index"
+        class="cart-item d-flex flex-wrap align-item-center justify-content-between">
         <img [src]="item.variantImage" alt="{{ item.productTitle }}" width="100">
         <div>
           <h6>{{ item.productTitle }}</h6>
@@ -160,18 +163,18 @@
       </div>
     </div>
 
-    
+
     <!-- Show message when cart is empty -->
     <ng-template #emptyCart>
       <p>Your cart is empty</p>
     </ng-template>
   </div>
 
- <div class="col-lg-12">
-  <div class="check-btn">
-    <button class="btn btn-dark" data-bs-target="#checkout" data-bs-toggle="modal">Continue</button>
+  <div class="col-lg-12">
+    <div class="check-btn">
+      <button class="btn btn-dark" data-bs-target="#checkout" data-bs-toggle="modal">Continue</button>
+    </div>
   </div>
- </div>
 </div>
 
 <!-- cart modal end -->
@@ -203,7 +206,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="PlaceOrder()" data-bs-dismiss="modal">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="PlaceOrder()" data-bs-dismiss="modal">Save
+          changes</button>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@ import { WebService } from '../../../Service/web.service';
 
 @Component({
   selector: 'app-our-work',
-  imports: [HeaderComponent,FooterComponent,NgxPaginationModule,CommonModule,RouterLink],
+  imports: [HeaderComponent,FooterComponent,NgxPaginationModule,CommonModule],
   templateUrl: './our-work.component.html',
   styleUrl: './our-work.component.css'
 })

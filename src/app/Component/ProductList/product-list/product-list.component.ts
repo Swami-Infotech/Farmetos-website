@@ -16,12 +16,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductListComponent implements OnInit {
 
   products: any[] = [];
-  itemsPerPage: number = 12;  // Set how many items per page
-  currentPage: number = 0;
+  itemsPerPage: number = 12;  
+  currentPage: number = 1;
+  totalItems: number = 0;
+  totalPages: number = 0;
   categoryID!: number;
   categoryName: string = '';
 
   ngOnInit(): void {
+    this.currentPage = 1;
 
     this.route.queryParams.subscribe(params => {
       this.categoryName = params['name']; 
@@ -38,25 +41,60 @@ export class ProductListComponent implements OnInit {
     private router: Router,){}
 
 
-  getproduct(CategoryID: number, pageNumber: number){
-    this.service.getproductbycategory(CategoryID, pageNumber).subscribe(
-      (resp:any)=>{
-        this.products = resp.data;
-        console.log(resp.data);
-        
+    getproduct(CategoryID: number, pageNumber: number) {
+      this.service.getproductbycategory(CategoryID, pageNumber).subscribe(
+        (resp: any) => {
+          if (resp.status) {
+            this.products = resp.data.products;
+            this.totalItems = resp.data.totalCount;
+            this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+          }
+        },
+        (error) => {
+          console.error("Error fetching products:", error);
+        }
+      );
+    }
+
+    getPages(): number[] {
+      return Array(this.totalPages).fill(0).map((_, i) => i + 1);
+    }
+    
+    goToPage(page: number) {
+      if (page !== this.currentPage) {
+        this.currentPage = page;
+        this.getproduct(this.categoryID, this.currentPage);
+        this.scrollToTop();
       }
-    )
+    }
+
+
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.getproduct(this.categoryID, this.currentPage);
+      this.scrollToTop();
+    }
   }
 
-  onPageChange(event: number) {
-    this.currentPage = event;
-    this.getproduct(this.categoryID, this.currentPage);
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.getproduct(this.categoryID, this.currentPage);
+      this.scrollToTop();
+    }
+  }
+
+  scrollToTop() {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   }
 
   navigate(userProductID: number) {
     this.router.navigate([`/ProductDetails/${userProductID}`]);
   }
-
 
 
 

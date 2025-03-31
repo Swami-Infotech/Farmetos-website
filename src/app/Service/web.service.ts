@@ -17,7 +17,7 @@ export class WebService {
     return this.http.get(this.baseurl + "Web/GetDashboardData")
   }
 
-  getproductbycategory(CategoryID: number, pageNumber: number) {
+    getproductbycategory(CategoryID: number, pageNumber: number) {
     return this.http.get(`${this.baseurl}Web/GetProductsByCategory/${CategoryID}?pageNumber=${pageNumber}`);
   }
 

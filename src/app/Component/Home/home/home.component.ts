@@ -98,7 +98,7 @@ export class HomeComponent implements OnInit {
   getproduct(CategoryID: number, pageNumber: number){
     this.service.getproductbycategory(CategoryID, pageNumber).subscribe(
       (resp:any)=>{
-        this.products = resp.data;
+        this.products = resp.data.products;
         
       }
     )

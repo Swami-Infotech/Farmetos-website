@@ -2,26 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 
-body{
+body {
     font-family: "Lora", serif;
 }
 
-:root{
-    --theme-font:"Lora", serif;
-    --primary-color:#01B147;
-    --secondary-color:#FFFFFF;
-    --third-color:#000000
+:root {
+    --theme-font: "Lora", serif;
+    --primary-color: #01B147;
+    --secondary-color: #FFFFFF;
+    --third-color: #000000
 }
 
-.what-icon{
+.what-icon {
     position: fixed;
     bottom: 10px;
     right: 15px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 12;
-   
+
 }
-.what-icon i{
+
+.what-icon i {
     font-size: 36px;
     color: var(--primary-color);
+}
+
+.testimonioal .owl-stage-outer{
+    border-radius: 10px;
+    box-shadow: 0px 6px 11px 0px #C2BFBF40;
+}
+
+.testimonioal .owl-theme .owl-nav .owl-next, .testimonioal .owl-theme .owl-nav .owl-prev{
+    background: transparent;
+    color: black;
+    width: 25px;
+    height: 25px;
+}
+
+.testimonioal .owl-next i, .testimonioal .owl-prev i{
+    font-size: 25px;
 }

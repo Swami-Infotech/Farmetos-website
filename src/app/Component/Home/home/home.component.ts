@@ -180,7 +180,8 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     dots: false,
     navSpeed: 700,
-    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
+    nav: true,
+    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
     responsive: {
       0: {
         items: 1
@@ -195,7 +196,6 @@ export class HomeComponent implements OnInit {
         items: 1
       }
     },
-    nav: true
   }
 
 
@@ -207,7 +207,7 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     dots: false,
     navSpeed: 700,
-    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
+    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
     responsive: {
       0: {
         items: 1
@@ -219,7 +219,7 @@ export class HomeComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 3.5
+        items: 4
       }
     },
     nav: true
@@ -234,7 +234,7 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     dots: false,
     navSpeed: 700,
-    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
+    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
     responsive: {
       0: {
         items: 1

@@ -5,8 +5,8 @@
 export const environment = {
    production: false,
   // live
-  // baseURL : "https://farmetosapi.swamiinfotech.in/",
-  baseURL: "https://localhost:7095/"
+  baseURL : "https://farmetosapi.swamiinfotech.in/",
+  // baseURL: "https://localhost:7095/"
 
   // live
   // baseURL : "http://49.12.69.171:8746/",

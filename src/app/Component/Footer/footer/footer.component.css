@@ -1,12 +1,18 @@
 .foot{
     background-color: #303840;
-    padding: 20px 0;
+    padding: 100px 0 40px;
 }
+
+.container-fluid{
+    padding-inline: 200px;
+}
+
 .farmetos-logo{
     text-align: center;
 }
 .farmetos-logo p{
     color: var(--secondary-color);
+    text-align: left;
 }
 .links h4{
     font-family: var(--theme-font);
@@ -19,6 +25,7 @@
     padding: 8px 0;
     font-family: var(--theme-font);
     font-weight: 600;
+    font-size: 18px;
 }
 .links ul{
     padding: 0 0 0 0;
@@ -36,8 +43,7 @@
     border: 1px solid var(--primary-color);
     text-align: center;
     font-size: 18px;
-    padding: 6px 0;
-    
+    padding: 6px 0;    
 }
 .fb i{
     color: #fff

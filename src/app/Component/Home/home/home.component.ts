@@ -24,6 +24,11 @@ export class HomeComponent implements OnInit {
   blog:any;
   cat:any;
 
+  usersCount = 0;
+bookingCount = 0;
+customerCount = 0;
+
+
   showAll = false; 
 
   cartItems: any[] = [];
@@ -41,6 +46,23 @@ export class HomeComponent implements OnInit {
     this.getalldata();
 
     this.getproduct(this.selectedCategoryID, 0);
+
+
+    this.animateCounter('usersCount', 300);
+  this.animateCounter('bookingCount', 300);
+  this.animateCounter('customerCount', 300);
+  }
+
+
+  animateCounter(field: 'usersCount' | 'bookingCount' | 'customerCount', target: number) {
+    let count = 0;
+    const interval = setInterval(() => {
+      count++;
+      this[field] = count;
+      if (count >= target) {
+        clearInterval(interval);
+      }
+    }, 10); // speed of count (lower is faster)
   }
 
   toggleViewAll() {

@@ -75,6 +75,19 @@
 .product {
     margin: 80px 0;
     object-fit: cover;
+    position: relative;
+}
+.flavor1{
+    position: absolute;
+    top: 0;
+}
+.flavors45{
+    position: absolute;
+    bottom: -3 0%;
+    left: 3%;
+    transform: translate(-50%,-50%);
+    width: 270px;
+    height: 440px;
 }
 
 .product-img{

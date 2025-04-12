@@ -22,16 +22,16 @@
 <section class="product-details" *ngIf="selectedVariant">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="product-img">
           <img [src]="selectedVariant.variantImage" alt="{{ selectedProduct.productTitle }}">
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="col-lg-8 col-md-8 col-sm-12">
         <div class="product-desc">
           <h2 style="font-size: 32px;">{{selectedVariant.description}}</h2>
 
-          <div class="counter ms-2">
+          <div class="counter">
             <h6 class="coun pb-2">
               <span class="pe-3" (click)="quantity = quantity + 1">
                 <i class="bi bi-plus fs-4"></i>
@@ -69,14 +69,23 @@
         <div class="client-slider">
           <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide *ngFor="let variant of selectedProduct.variants">
-              <div class="card" (click)="selectProduct(variant)">
-                <div class="client-logo text-center">
-                  <img [src]="variant.variantImage" [alt]="variant.name">
-                  <h5>{{variant.description | slice : 0:30}}</h5>
+              <div 
+                class="card" 
+                (click)="selectProduct(variant)" 
+                [ngClass]="{ 'single-product': selectedProduct.variants.length === 1 }"
+              >
+                <div class="client-logo">
+                  <img 
+                    [src]="variant.variantImage" 
+                    [alt]="variant.name"
+                    [ngClass]="{ 'single-img': selectedProduct.variants.length === 1 }"
+                  >
+                  <h5>{{ variant.description | slice : 0:30 }}</h5>
                 </div>
               </div>
             </ng-template>
           </owl-carousel-o>
+          
 
 
 
@@ -144,10 +153,10 @@
   <div class="offcanvas-body">
     <div *ngIf="cartProducts.length > 0; else emptyCart">
       <div *ngFor="let item of cartProducts; let i = index"
-        class="cart-item d-flex flex-wrap align-item-center justify-content-between">
+        class="cart-item d-flex flex-wrap my-3 align-item-center justify-content-between">
         <img [src]="item.variantImage" alt="{{ item.productTitle }}" width="100">
         <div>
-          <h6>{{ item.productTitle }}</h6>
+          <h6>{{ item.description }}</h6>
           <p>Quantity: {{ item.quantity }}</p>
           <h6 class="coun pb-2">
             <span class="pe-3" (click)="updateQuantity(i, item.quantity + 1)">

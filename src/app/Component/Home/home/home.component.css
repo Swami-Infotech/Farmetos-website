@@ -77,22 +77,111 @@
     object-fit: cover;
 }
 
-.nav-pills {
-    margin: 20px 0 70px 0;
+.product-img{
+    position: relative;
+}
+.product-name{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 10px;
+    margin: 14px 0;
 }
 
-.nav-pills .nav-item .nav-link {
-    font-size: 22px;
-    font-family: var(--theme-font);
+.product-img img{
+    width: 100%;
+    height: 300px;
+    margin: 15px 0;
 }
 
-.nav-pills .nav-item .nav-link.active {
-    font-size: 22px;
-    font-family: var(--theme-font);
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
-    background-color: #fff !important;
+.product-name{
+    opacity: 0;
 }
+.product-img:hover .product-name{
+    opacity: 1;
+}
+
+.product-title.selected {
+    background-color: #000; /* Your highlight color */
+    color: #fff; /* Optional: change text color too */
+  }
+  .card-wrapper img{
+    width: 100%;
+    height: 250px;
+  }
+
+.card-wrapper {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* .pot-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  } */
+  
+  .product-title {
+    background-color: #fff;
+    padding: 10px 0;
+  }
+  
+  .product-title h3 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+  
+    .custom-carousel {
+      padding-top: 40px; 
+    }
+  
+    .owl-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+      padding-left: 10px;
+  
+      button.owl-prev,
+      button.owl-next {
+        background: #000;
+        color: #fff;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        border: none;
+        font-size: 20px;
+        line-height: 36px;
+        transition: 0.3s ease;
+  
+        &:hover {
+          background-color: #444;
+        }
+      }
+    }
+  }
+  
+  
+
+  
 
 .stand-img {
     position: relative;
@@ -290,8 +379,19 @@
     height: 50%;
     background: linear-gradient(180deg, rgb(116 116 116 / 10%) 0%, rgba(1, 177, 71, 1) 100%);
     opacity: 55%;
+    opacity: 0;
 }
 
+.tree-title{
+    opacity: 0;
+}
+.service-card:hover .tree-title{
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+.service-card:hover .overlay{
+    opacity: 55%;
+}
 .tree-title {
     position: absolute;
     bottom: 8%;
@@ -565,6 +665,19 @@
     }
 }
 
+.blog-slider ::ng-deep .owl-nav button.owl-prev,
+.blog-slider ::ng-deep .owl-nav button.owl-next {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #555;
+  pointer-events: all;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
 /* blogs css end */
 
 /* count css start */
@@ -573,8 +686,26 @@
     background-color: #01B147;
     position: relative;
     margin: 80px 0;
+    padding: 60px 0;
 }
-
+.users{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+.booking{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+.customer{
+    text-align: center;
+    color: #ffff;
+    font-size: 24px;
+    font-weight: 700;
+}
 .ocks1 {
     position: absolute;
     top: 0;
@@ -593,7 +724,7 @@
 }
 
 .Count .count-row {
-    padding: 100px 0;
+    padding: 69px 0;
 }
 
 .count-row .flow {
@@ -607,7 +738,7 @@
 }
 
 .count-row .counter {
-    font-size: 57px;
+  
     font-weight: 700;
     color: #FFFFFF;
 }

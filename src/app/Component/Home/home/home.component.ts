@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
   blog:any;
   cat:any;
 
+  showAll = false; 
+
   cartItems: any[] = [];
 
   isViewAll: boolean = false;
@@ -83,7 +85,7 @@ export class HomeComponent implements OnInit {
           this.client = resp.data.clients;
           this.blog = resp.data.blogs;
           this.cat = resp.data.categories;
-          if(this.cat.length > 0){
+          if(this.cat.length === 0){
             this.activeTab = this.cat[0].categoryID;
             this.getproduct(this.activeTab,0);
           }
@@ -95,27 +97,28 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  getproduct(CategoryID: number, pageNumber: number){
-    this.service.getproductbycategory(CategoryID, pageNumber).subscribe(
-      (resp:any)=>{
-        this.products = resp.data.products;
-        
+  selectedCategory: any = null;
+  
+  onCategorySelect(category: any) {
+    this.selectedCategory = category;
+    this.products = []; 
+    this.getproduct(category.categoryID, 1);
+  }
+  
+  getproduct(categoryID: number, pageNumber: number) {
+    this.service.getproductbycategory(categoryID, pageNumber).subscribe(
+      (resp: any) => {
+        if (resp.status === true && resp.data.products) {
+          this.products = resp.data.products;
+        }
+      },
+      (error) => {
+        console.error('Error loading products:', error);
       }
-    )
+    );
   }
-
-
-  onCategoryChange(newCategoryID: number) {
-    this.selectedCategoryID = newCategoryID;
-    this.getproduct(this.selectedCategoryID, 0); // Fetch products for new category
-  }
-
-  setActiveTab(categoryID: number) {
-
-    this.activeTab = categoryID; // Set active category
-    this.getproduct(categoryID, 0); // Fetch products for selected category
-  }
-
+  
+  
   navigate(categoryID: number, categoryName?: string) {
     console.log("Category ID:", categoryID);
     console.log("Category Name:", categoryName);
@@ -129,6 +132,9 @@ export class HomeComponent implements OnInit {
     });
   }
   
+  navigateToAllProducts() {
+    this.route.navigate(['/ProductList']); 
+  }
 
   navigates(userProductID: number) {
     this.route.navigate([`/ProductDetails/${userProductID}`]);
@@ -153,7 +159,8 @@ export class HomeComponent implements OnInit {
     autoplay:true,
     dots: false,
     navSpeed: 100,
-    navText: ['<i class="bi bi-chevron-left fs-4"></i>', '<i class="bi bi-chevron-right fs-4"></i>'],
+    nav: true,
+    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
     responsive: {
       0: {
         items: 1
@@ -168,7 +175,6 @@ export class HomeComponent implements OnInit {
         items: 4
       }
     },
-    nav: true
   }
 
 
@@ -247,6 +253,32 @@ export class HomeComponent implements OnInit {
       },
       940: {
         items: 3
+      }
+    },
+    nav: true
+  }
+
+  customOptions4: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay:true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4.5
       }
     },
     nav: true

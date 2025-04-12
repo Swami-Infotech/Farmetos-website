@@ -1,104 +1,27 @@
-.foot{
+.footer-section {
     background-color: #303840;
-    padding: 100px 0 40px;
-}
-
-.container-fluid{
-    padding-inline: 200px;
-}
-
-.farmetos-logo{
-    text-align: center;
-}
-.farmetos-logo p{
-    color: var(--secondary-color);
-    text-align: left;
-}
-.links h4{
-    font-family: var(--theme-font);
-    color: var(--primary-color);
-    font-weight: 700;
-}
-.links ul li{
-    list-style: none;
-    color: var(--secondary-color);
-    padding: 8px 0;
-    font-family: var(--theme-font);
-    font-weight: 600;
-    font-size: 18px;
-}
-.links ul{
-    padding: 0 0 0 0;
-}
-.social h4{
-    font-family: var(--theme-font);
-    color: var(--primary-color);
-    font-weight: 700;
-}
-.fb{
-    background-color: #303840;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--primary-color);
-    text-align: center;
-    font-size: 18px;
-    padding: 6px 0;    
-}
-.fb i{
-    color: #fff
-}
-.inst{
-    background-color: #303840;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--primary-color);
-    text-align: center;
-    font-size: 18px;
-    padding: 6px 0;
-    margin: 10px 0;
-}
-.inst i{
-    color: #fff
-}
-.twit{
-    background-color: #303840;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--primary-color);
-    text-align: center;
-    font-size: 18px;
-    padding: 6px 0;
-}
-.twit i{
+  }
+  
+  .footer-link {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
     color: #fff;
-}
-.you{
-    background-color: #303840;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--primary-color);
-    text-align: center;
-    font-size: 18px;
-    padding: 6px 0;
-}
-.you i{
-    color: #ffff;
-}
-.what{
-    background-color: #303840;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--primary-color);
-    text-align: center;
-    font-size: 18px;
-    padding: 6px 0;
-    margin: 10px 0;
-}
-.what i{
-    color: #ffff;
-}
+    text-decoration: underline;
+  }
+  
+  .social-icon {
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #fff;
+  }
+  

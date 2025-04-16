@@ -69,23 +69,17 @@
         <div class="client-slider">
           <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide *ngFor="let variant of selectedProduct.variants">
-              <div 
-                class="card" 
-                (click)="selectProduct(variant)" 
-                [ngClass]="{ 'single-product': selectedProduct.variants.length === 1 }"
-              >
+              <div class="card" (click)="selectProduct(variant)"
+                [ngClass]="{ 'single-product': selectedProduct.variants.length === 1 }">
                 <div class="client-logo">
-                  <img 
-                    [src]="variant.variantImage" 
-                    [alt]="variant.name"
-                    [ngClass]="{ 'single-img': selectedProduct.variants.length === 1 }"
-                  >
+                  <img [src]="variant.variantImage" [alt]="variant.name"
+                    [ngClass]="{ 'single-img': selectedProduct.variants.length === 1 }">
                   <h5>{{ variant.description | slice : 0:30 }}</h5>
                 </div>
               </div>
             </ng-template>
           </owl-carousel-o>
-          
+
 
 
 
@@ -195,6 +189,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <label for="">Fill this Details</label>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

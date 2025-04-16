@@ -93,23 +93,28 @@
   }
 
   .product-img img{
-    width: 100%;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
   .product-desc{
     padding: 5% 0;
   }
   
   /* If only 1 product exists, make it centered and bigger */
-.single-product {
+.single-product{
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.single-img {
-  width: 200px; /* Larger image for single product */
-  height: auto;
+.single-img{
+  width: 200px; 
+  height: 300px;
+}
+
+.client-logo img{
+  width: 300px; 
+  height: 300px;
 }
 
 .client-logo h5 {

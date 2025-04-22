@@ -72,7 +72,7 @@
   <!-- Single View All Button shown only if there are more than 8 products -->
   <div class="col-lg-12 text-center mt-3" *ngIf="products.length > 8">
     <!-- Pass categoryID and categoryName from selectedCategory -->
-    <button class="btn btn-primary" (click)="navigate(selectedCategory.categoryID, selectedCategory.categoryName)">
+    <button class="btn btn-dark" (click)="navigate(selectedCategory.categoryID, selectedCategory.categoryName)">
       View All Products
     </button>
   </div>
@@ -81,12 +81,12 @@
   </ng-container>
 
   <!-- No products fallback message -->
-  <ng-template #noProducts>
+  <ng-template #noProducts class="mt-3">
     <div class="col-lg-12 text-center">
       <img 
       src="../../../../assets/image/Slider/slider.png" 
       alt="Banner" 
-      class="img-fluid"
+      class="img-fluid mt-4"
     />
     </div>
   </ng-template>

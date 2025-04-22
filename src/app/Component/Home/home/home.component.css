@@ -6,10 +6,7 @@
     padding: 0 15px;
 }
 
-.container-fluid {
-    width: 100%!important;
-    padding-inline: 200px;
-}
+
 
 .carousel-item img {
     height: 100vh;
@@ -943,6 +940,47 @@
 
 /* footer css end */
 
+@media (max-width:1080px) {
+    .flavors45 {
+        display: none;
+      }
+      .flavor1 {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 116px;
+          height: 122px;
+      }
+      .leaves {
+          position: absolute;
+          top: -2%;
+          left: -4%;
+          width: 148px;
+          height: 155px;
+      }
+      .ocks1 {
+          display: none;
+      }
+      .ocks2{
+          display: none;
+      }
+      .booking{
+          padding: 20px 0;
+      }
+      .users img{
+          width: 50px;
+      }
+      .booking img{
+          width: 50px;
+      }
+      .customer img{
+          width: 50px;
+      }
+      .plantPots {
+       display: none;
+      }
+}
+
 
 @media (max-width:768px) {
     .title h5 {
@@ -1104,9 +1142,17 @@
         width: 47%;
         padding: 12px;
     }
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
+    }
 }
 
 @media (max-width:700px) {
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
+    }
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1286,9 +1332,16 @@
         border-radius: 40px;
         width: 30%;
     }
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
+    }
 }
 
 @media (max-width:600px) {
+    .card-wrapper   img {
+        width: 100%;
+    }
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1375,6 +1428,9 @@
 }
 
 @media (max-width:500px) {
+    .card-wrapper img {
+        width: 100%;
+    }
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1433,9 +1489,19 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
+    }
+    .flavors {
+        position: absolute;
+        bottom: 0%;
+        right: 8%;
+        width: 150px;
+        height: 150px;
     }
 
+    .plantPot {
+       display: none;
+    }
     .blog .card {
         margin: 10px 0;
     }
@@ -1461,6 +1527,9 @@
 }
 
 @media (max-width:485px) {
+    .card-wrapper img {
+        width: 100%;
+    }
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1519,7 +1588,7 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 
     .blog .card {
@@ -1605,7 +1674,7 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 
     .blog .card {
@@ -1691,7 +1760,7 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 
     .blog .card {
@@ -1715,6 +1784,10 @@
         font-weight: 600;
         border-radius: 40px;
         width: 30%;
+    }
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
     }
 }
 
@@ -1777,7 +1850,7 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 
     .blog .card {
@@ -1801,10 +1874,18 @@
         font-weight: 600;
         border-radius: 40px;
         width: 30%;
+    }
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
     }
 }
 
 @media (max-width:455px) {
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
+    }
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1863,7 +1944,7 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 
     .blog .card {
@@ -1888,9 +1969,51 @@
         border-radius: 40px;
         width: 30%;
     }
+    .flavors45 {
+        display: none;
+      }
+      .flavor1 {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 116px;
+          height: 122px;
+      }
+      .leaves {
+          position: absolute;
+          top: -2%;
+          left: -4%;
+          width: 148px;
+          height: 155px;
+      }
+      .ocks1 {
+          display: none;
+      }
+      .ocks2{
+          display: none;
+      }
+      .booking{
+          padding: 20px 0;
+      }
+      .users img{
+          width: 50px;
+      }
+      .booking img{
+          width: 50px;
+      }
+      .customer img{
+          width: 50px;
+      }
+      .plantPots {
+       display: none;
+      }
 }
 
 @media (max-width:434px) {
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
+    }
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1949,7 +2072,7 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 
     .blog .card {
@@ -1974,14 +2097,66 @@
         border-radius: 40px;
         width: 30%;
     }
+    .flavors45 {
+        display: none;
+      }
+      .flavor1 {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 116px;
+          height: 122px;
+      }
+      .leaves {
+          position: absolute;
+          top: -2%;
+          left: -4%;
+          width: 148px;
+          height: 155px;
+      }
+      .ocks1 {
+          display: none;
+      }
+      .ocks2{
+          display: none;
+      }
+      .booking{
+          padding: 20px 0;
+      }
+      .users img{
+          width: 50px;
+      }
+      .booking img{
+          width: 50px;
+      }
+      .customer img{
+          width: 50px;
+      }
+      .plantPots {
+       display: none;
+      }
 }
 
 @media (max-width:426px) {
+    .card-wrapper   img {
+        width: 100%;
+        height: 200px;
+    }
     .stand-img img {
         width: 100%;
         height: 500px;
     }
+    .plantPot{
+        display: none;
+    }
 
+    .flavors {
+        position: absolute;
+        bottom: 0%;
+        right: 0;
+        width: 150px;
+        height: 150px;
+    }
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -2035,7 +2210,50 @@
     }
 
     .service-card .card {
-        margin: 10px 0;
+        margin: 10px 5px;
+    }
+    .service-card .card img {
+        width: 100%;
+        display: block;
+        height: 350px;
+    }
+    .flavors45 {
+      display: none;
+    }
+    .flavor1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 116px;
+        height: 122px;
+    }
+    .leaves {
+        position: absolute;
+        top: -2%;
+        left: -4%;
+        width: 148px;
+        height: 155px;
+    }
+    .ocks1 {
+        display: none;
+    }
+    .ocks2{
+        display: none;
+    }
+    .booking{
+        padding: 20px 0;
+    }
+    .users img{
+        width: 50px;
+    }
+    .booking img{
+        width: 50px;
+    }
+    .customer img{
+        width: 50px;
+    }
+    .plantPots {
+     display: none;
     }
 
     .blog .card {

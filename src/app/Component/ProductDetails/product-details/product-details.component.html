@@ -22,12 +22,12 @@
 <section class="product-details" *ngIf="selectedVariant">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="col-lg-4 col-md-12 col-sm-12">
         <div class="product-img">
           <img [src]="selectedVariant.variantImage" alt="{{ selectedProduct.productTitle }}">
         </div>
       </div>
-      <div class="col-lg-8 col-md-8 col-sm-12">
+      <div class="col-lg-8 col-md-12 col-sm-12">
         <div class="product-desc">
           <h2 style="font-size: 32px;">{{selectedVariant.description}}</h2>
 
@@ -48,7 +48,7 @@
           </div>
 
           <div class="product-content">
-            <p [innerHTML]="selectedVariant.productContent"></p>
+            <p class="images" [innerHTML]="selectedVariant.productContent"></p>
           </div>
         </div>
 
@@ -139,20 +139,26 @@
 
 <!-- cart modal start -->
 <!-- Right-Side Drawer -->
-<div class="offcanvas offcanvas-end custom-drawer" id="cartDrawer" tabindex="-1" aria-labelledby="cartDrawerLabel">
+<!-- <div class="offcanvas offcanvas-end custom-drawer custom-drawer-fullscreen" id="cartDrawer" tabindex="-1" aria-labelledby="cartDrawerLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="cartDrawerLabel">Shopping Cart</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" (click)="reloda()"></button>
   </div>
-  <div class="offcanvas-body">
+  
+
+
+
+  <div class="offcanvas-body drawer-xl">
     <div *ngIf="cartProducts.length > 0; else emptyCart">
-      <div *ngFor="let item of cartProducts; let i = index"
-        class="cart-item d-flex flex-wrap my-3 align-item-center justify-content-between">
-        <img [src]="item.variantImage" alt="{{ item.productTitle }}" width="100">
-        <div>
+      <div *ngFor="let item of cartProducts; let i = index" class="cart-item row my-3 align-items-center">
+        <div class="col-4 col-md-4 text-center mb-2 mb-md-0">
+          <img [src]="item.variantImage" alt="{{ item.productTitle }}" class="img-fluid" style="max-width: 100px;">
+        </div>
+  
+        <div class="col-4 col-md-4">
           <h6>{{ item.description }}</h6>
           <p>Quantity: {{ item.quantity }}</p>
-          <h6 class="coun pb-2">
+          <h6 class="coun pb-2 d-flex align-items-center justify-content-center justify-content-md-start">
             <span class="pe-3" (click)="updateQuantity(i, item.quantity + 1)">
               <i class="bi bi-plus fs-4"></i>
             </span>
@@ -162,20 +168,71 @@
             </span>
           </h6>
         </div>
-        <button class="btn btn-sm btn-danger" (click)="removeFromCart(item.userProductVariantID)">Remove</button>
+        <div class="col-4 col-md-4 text-end">
+          <button class="btn btn-sm btn-danger mt-2 mt-md-0" (click)="removeFromCart(item.userProductVariantID)">Remove</button>
+        </div>
       </div>
     </div>
-
-
-    <!-- Show message when cart is empty -->
+  
     <ng-template #emptyCart>
       <p>Your cart is empty</p>
     </ng-template>
   </div>
-
+  
   <div class="col-lg-12">
     <div class="check-btn">
       <button class="btn btn-dark" data-bs-target="#checkout" data-bs-toggle="modal">Continue</button>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="offcanvas offcanvas-end custom-drawer" id="cartDrawer" tabindex="-1" aria-labelledby="cartDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartDrawerLabel">Shopping Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" (click)="reloda()"></button>
+  </div>
+
+  <!-- Scrollable body -->
+  <div class="offcanvas-body drawer-xl d-flex flex-column justify-content-between" style="height: 100%;">
+    <!-- Top content: Cart Items -->
+    <div class="flex-grow-1 overflow-auto">
+      <div *ngIf="cartProducts.length > 0; else emptyCart">
+        <div *ngFor="let item of cartProducts; let i = index" class="cart-item row my-3 align-items-center">
+          <div class="col-4 col-md-4 text-center mb-2 mb-md-0">
+            <img [src]="item.variantImage" alt="{{ item.productTitle }}" class="img-fluid" style="max-width: 100px;">
+          </div>
+          <div class="col-4 col-md-4">
+            <h6>{{ item.description }}</h6>
+            <p>Quantity: {{ item.quantity }}</p>
+            <h6 class="coun pb-2 d-flex align-items-center justify-content-center justify-content-md-start">
+              <span class="pe-3" (click)="updateQuantity(i, item.quantity + 1)">
+                <i class="bi bi-plus fs-4"></i>
+              </span>
+              {{ item.quantity }}
+              <span class="ps-3" (click)="updateQuantity(i, item.quantity > 1 ? item.quantity - 1 : 1)">
+                <i class="bi bi-dash fs-4"></i>
+              </span>
+            </h6>
+          </div>
+          <div class="col-4 col-md-4 text-end">
+            <button class="btn btn-sm btn-danger mt-2 mt-md-0" (click)="removeFromCart(item.userProductVariantID)">
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+      <ng-template #emptyCart>
+        <p>Your cart is empty</p>
+      </ng-template>
+    </div>
+
+    <!-- Bottom sticky button -->
+    <div class="pt-3 border-top">
+      <button class="btn btn-dark w-100" data-bs-target="#checkout" data-bs-toggle="modal">
+        Continue
+      </button>
     </div>
   </div>
 </div>

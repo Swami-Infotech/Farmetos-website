@@ -74,23 +74,26 @@
     object-fit: cover;
     position: relative;
 }
-.flavor1{
+
+.flavor1 {
     position: absolute;
     top: 0;
 }
-.flavors45{
+
+.flavors45 {
     position: absolute;
     bottom: -3 0%;
     left: 3%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 270px;
     height: 440px;
 }
 
-.product-img{
+.product-img {
     position: relative;
 }
-.product-name{
+
+.product-name {
     position: absolute;
     top: 0;
     left: 0;
@@ -109,89 +112,93 @@
     margin: 14px 0;
 }
 
-.product-img img{
+.product-img img {
     width: 100%;
     height: 300px;
     margin: 15px 0;
 }
 
-.product-name{
+.product-name {
     opacity: 0;
 }
-.product-img:hover .product-name{
+
+.product-img:hover .product-name {
     opacity: 1;
 }
 
 .product-title.selected {
-    background-color: #000; /* Your highlight color */
-    color: #fff; /* Optional: change text color too */
-  }
-  .card-wrapper img{
+    background-color: #000;
+    /* Your highlight color */
+    color: #fff;
+    /* Optional: change text color too */
+}
+
+.card-wrapper img {
     width: 100%;
     height: 250px;
-  }
+}
 
 .card-wrapper {
     background: #fff;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  /* .pot-image {
+/* .pot-image {
     width: 100%;
     height: auto;
     object-fit: contain;
   } */
-  
-  .product-title {
+
+.product-title {
     background-color: #fff;
     padding: 10px 0;
-  }
-  
-  .product-title h3 {
+}
+
+.product-title h3 {
     font-size: 1.1rem;
     margin: 0;
-  }
+}
 
-  .carousel-wrapper {
+.carousel-wrapper {
     position: relative;
-  
-    .custom-carousel {
-      padding-top: 40px; 
-    }
-  
-    .owl-nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-      padding-left: 10px;
-  
-      button.owl-prev,
-      button.owl-next {
-        background: #000;
-        color: #fff;
-        border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        border: none;
-        font-size: 20px;
-        line-height: 36px;
-        transition: 0.3s ease;
-  
-        &:hover {
-          background-color: #444;
-        }
-      }
-    }
-  }
-  
-  
 
-  
+    .custom-carousel {
+        padding-top: 40px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+        padding-left: 10px;
+
+        button.owl-prev,
+        button.owl-next {
+            background: #000;
+            color: #fff;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            border: none;
+            font-size: 20px;
+            line-height: 36px;
+            transition: 0.3s ease;
+
+            &:hover {
+                background-color: #444;
+            }
+        }
+    }
+}
+
+
+
+
 
 .stand-img {
     position: relative;
@@ -352,7 +359,7 @@
     position: absolute;
     top: 50%;
     width: 100%;
-    display: flex!important;
+    display: flex !important;
     justify-content: space-between;
     transform: translateY(-50%);
 }
@@ -392,16 +399,19 @@
     opacity: 0;
 }
 
-.tree-title{
+.tree-title {
     opacity: 0;
 }
-.service-card:hover .tree-title{
+
+.service-card:hover .tree-title {
     opacity: 1;
     transition: all 0.5s ease-in-out;
 }
-.service-card:hover .overlay{
+
+.service-card:hover .overlay {
     opacity: 55%;
 }
+
 .tree-title {
     position: absolute;
     bottom: 8%;
@@ -437,6 +447,7 @@
 .client .title {
     margin: 0 0 60px;
 }
+
 .client .title h2 {
     font-family: var(--theme-font);
     color: var(--third-color);
@@ -677,15 +688,15 @@
 
 .blog-slider ::ng-deep .owl-nav button.owl-prev,
 .blog-slider ::ng-deep .owl-nav button.owl-next {
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  color: #555;
-  pointer-events: all;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #555;
+    pointer-events: all;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 /* blogs css end */
@@ -698,24 +709,28 @@
     margin: 80px 0;
     padding: 60px 0;
 }
-.users{
+
+.users {
     text-align: center;
     color: #fff;
     font-size: 24px;
     font-weight: 700;
 }
-.booking{
+
+.booking {
     text-align: center;
     color: #fff;
     font-size: 24px;
     font-weight: 700;
 }
-.customer{
+
+.customer {
     text-align: center;
     color: #ffff;
     font-size: 24px;
     font-weight: 700;
 }
+
 .ocks1 {
     position: absolute;
     top: 0;
@@ -748,7 +763,7 @@
 }
 
 .count-row .counter {
-  
+
     font-weight: 700;
     color: #FFFFFF;
 }
@@ -802,7 +817,8 @@
     box-shadow: 0px 9px 21px 0px #C2BFBF40;
 }
 
-.user-input input, .user-input textarea {
+.user-input input,
+.user-input textarea {
     border: 0;
     outline: 0;
     margin-left: 10px;
@@ -830,7 +846,7 @@
 }
 
 .message {
-    top : 20px;
+    top: 20px;
 }
 
 .submit {
@@ -943,42 +959,51 @@
 @media (max-width:1080px) {
     .flavors45 {
         display: none;
-      }
-      .flavor1 {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 116px;
-          height: 122px;
-      }
-      .leaves {
-          position: absolute;
-          top: -2%;
-          left: -4%;
-          width: 148px;
-          height: 155px;
-      }
-      .ocks1 {
-          display: none;
-      }
-      .ocks2{
-          display: none;
-      }
-      .booking{
-          padding: 20px 0;
-      }
-      .users img{
-          width: 50px;
-      }
-      .booking img{
-          width: 50px;
-      }
-      .customer img{
-          width: 50px;
-      }
-      .plantPots {
-       display: none;
-      }
+    }
+
+    .flavor1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 116px;
+        height: 122px;
+    }
+
+    .leaves {
+        position: absolute;
+        top: -2%;
+        left: -4%;
+        width: 148px;
+        height: 155px;
+    }
+
+    .ocks1 {
+        display: none;
+    }
+
+    .ocks2 {
+        display: none;
+    }
+
+    .booking {
+        padding: 20px 0;
+    }
+
+    .users img {
+        width: 50px;
+    }
+
+    .booking img {
+        width: 50px;
+    }
+
+    .customer img {
+        width: 50px;
+    }
+
+    .plantPots {
+        display: none;
+    }
 }
 
 
@@ -1142,17 +1167,19 @@
         width: 47%;
         padding: 12px;
     }
-    .card-wrapper   img {
+
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
 }
 
 @media (max-width:700px) {
-    .card-wrapper   img {
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
+
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1332,16 +1359,18 @@
         border-radius: 40px;
         width: 30%;
     }
-    .card-wrapper   img {
+
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
 }
 
 @media (max-width:600px) {
-    .card-wrapper   img {
+    .card-wrapper img {
         width: 100%;
     }
+
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1431,6 +1460,7 @@
     .card-wrapper img {
         width: 100%;
     }
+
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1491,6 +1521,7 @@
     .service-card .card {
         margin: 10px 5px;
     }
+
     .flavors {
         position: absolute;
         bottom: 0%;
@@ -1500,8 +1531,9 @@
     }
 
     .plantPot {
-       display: none;
+        display: none;
     }
+
     .blog .card {
         margin: 10px 0;
     }
@@ -1530,6 +1562,7 @@
     .card-wrapper img {
         width: 100%;
     }
+
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1785,7 +1818,8 @@
         border-radius: 40px;
         width: 30%;
     }
-    .card-wrapper   img {
+
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
@@ -1875,17 +1909,19 @@
         border-radius: 40px;
         width: 30%;
     }
-    .card-wrapper   img {
+
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
 }
 
 @media (max-width:455px) {
-    .card-wrapper   img {
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
+
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -1969,51 +2005,62 @@
         border-radius: 40px;
         width: 30%;
     }
+
     .flavors45 {
         display: none;
-      }
-      .flavor1 {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 116px;
-          height: 122px;
-      }
-      .leaves {
-          position: absolute;
-          top: -2%;
-          left: -4%;
-          width: 148px;
-          height: 155px;
-      }
-      .ocks1 {
-          display: none;
-      }
-      .ocks2{
-          display: none;
-      }
-      .booking{
-          padding: 20px 0;
-      }
-      .users img{
-          width: 50px;
-      }
-      .booking img{
-          width: 50px;
-      }
-      .customer img{
-          width: 50px;
-      }
-      .plantPots {
-       display: none;
-      }
+    }
+
+    .flavor1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 116px;
+        height: 122px;
+    }
+
+    .leaves {
+        position: absolute;
+        top: -2%;
+        left: -4%;
+        width: 148px;
+        height: 155px;
+    }
+
+    .ocks1 {
+        display: none;
+    }
+
+    .ocks2 {
+        display: none;
+    }
+
+    .booking {
+        padding: 20px 0;
+    }
+
+    .users img {
+        width: 50px;
+    }
+
+    .booking img {
+        width: 50px;
+    }
+
+    .customer img {
+        width: 50px;
+    }
+
+    .plantPots {
+        display: none;
+    }
 }
 
 @media (max-width:434px) {
-    .card-wrapper   img {
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
+
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -2097,56 +2144,68 @@
         border-radius: 40px;
         width: 30%;
     }
+
     .flavors45 {
         display: none;
-      }
-      .flavor1 {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 116px;
-          height: 122px;
-      }
-      .leaves {
-          position: absolute;
-          top: -2%;
-          left: -4%;
-          width: 148px;
-          height: 155px;
-      }
-      .ocks1 {
-          display: none;
-      }
-      .ocks2{
-          display: none;
-      }
-      .booking{
-          padding: 20px 0;
-      }
-      .users img{
-          width: 50px;
-      }
-      .booking img{
-          width: 50px;
-      }
-      .customer img{
-          width: 50px;
-      }
-      .plantPots {
-       display: none;
-      }
+    }
+
+    .flavor1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 116px;
+        height: 122px;
+    }
+
+    .leaves {
+        position: absolute;
+        top: -2%;
+        left: -4%;
+        width: 148px;
+        height: 155px;
+    }
+
+    .ocks1 {
+        display: none;
+    }
+
+    .ocks2 {
+        display: none;
+    }
+
+    .booking {
+        padding: 20px 0;
+    }
+
+    .users img {
+        width: 50px;
+    }
+
+    .booking img {
+        width: 50px;
+    }
+
+    .customer img {
+        width: 50px;
+    }
+
+    .plantPots {
+        display: none;
+    }
 }
 
 @media (max-width:426px) {
-    .card-wrapper   img {
+    .card-wrapper img {
         width: 100%;
         height: 200px;
     }
+
     .stand-img img {
         width: 100%;
         height: 500px;
     }
-    .plantPot{
+
+    .plantPot {
         display: none;
     }
 
@@ -2157,6 +2216,7 @@
         width: 150px;
         height: 150px;
     }
+
     .slider-cont h1 {
         font-family: var(--theme-font);
         font-size: 36px;
@@ -2212,14 +2272,17 @@
     .service-card .card {
         margin: 10px 5px;
     }
+
     .service-card .card img {
         width: 100%;
         display: block;
         height: 350px;
     }
+
     .flavors45 {
-      display: none;
+        display: none;
     }
+
     .flavor1 {
         position: absolute;
         top: 0;
@@ -2227,6 +2290,7 @@
         width: 116px;
         height: 122px;
     }
+
     .leaves {
         position: absolute;
         top: -2%;
@@ -2234,26 +2298,33 @@
         width: 148px;
         height: 155px;
     }
+
     .ocks1 {
         display: none;
     }
-    .ocks2{
+
+    .ocks2 {
         display: none;
     }
-    .booking{
+
+    .booking {
         padding: 20px 0;
     }
-    .users img{
+
+    .users img {
         width: 50px;
     }
-    .booking img{
+
+    .booking img {
         width: 50px;
     }
-    .customer img{
+
+    .customer img {
         width: 50px;
     }
+
     .plantPots {
-     display: none;
+        display: none;
     }
 
     .blog .card {
@@ -2359,4 +2430,158 @@
         border-radius: 40px;
         width: 30%;
     }
+}
+
+@media (max-width: 768px) {
+    .card-wrapper {
+        padding: 10px;
+    }
+
+    .card-wrapper img {
+        height: 150px;
+    }
+
+
+    .service-card .card img {
+        height: 300px;
+    }
+
+    .custom-carousel .owl-nav {
+        top: -40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card-wrapper img {
+        height: 180px;
+    }
+
+
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.owl-prev,
+.owl-next {
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: black !important;
+    padding: 10px 15px !important;
+    border-radius: 50% !important;
+}
+
+.owl-prev {
+    left: -40px;
+}
+
+.owl-next {
+    right: -40px;
+}
+
+.service-card .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.service-card .card {
+    margin: 0 0px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* margin: 0 0px;
+overflow: hidden;
+width: 100%; */
+
+
+@media (max-width: 768px) {
+    .service-card .card img {
+        height: 150px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .service-card .card img {
+        height: 160px;
+    }
+}
+
+.client-logo img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.client-slider .card {
+    margin: 0 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .client-logo img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .client-logo img {
+        height: 80px;
+    }
+}
+
+.custom-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.custom-carousel .owl-nav button {
+    font-family: var(--theme-font);
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.custom-carousel .owl-nav button:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.custom-carousel .owl-nav .owl-prev {
+    left: -20px;
+}
+
+.custom-carousel .owl-nav .owl-next {
+    right: -20px;
+}
+
+
+
+.card-wrapper img {
+    object-fit: cover;
 }

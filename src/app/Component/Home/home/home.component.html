@@ -23,9 +23,9 @@
   </div>
 
   <!-- header start -->
-<app-header></app-header>
-<!-- header end -->
- 
+  <app-header></app-header>
+  <!-- header end -->
+
   <!-- slider end -->
 </div>
 <!-- slider & heade section end -->
@@ -38,61 +38,58 @@
         <div class="title">
           <h5>Our Product</h5>
         </div>
-      <!-- Category Carousel -->
-<owl-carousel-o [options]="customOptions4" #carouselExample1 class="custom-carousel">
-  <ng-container *ngFor="let d of cat">
-    <ng-template carouselSlide>
-      <div class="products-card" (click)="onCategorySelect(d)">
-        <div class="card-wrapper" [class.selected]="d.categoryID === selectedCategory?.categoryID">
-          <img [src]="d.categoryImage" alt="Category Image" class="pot-image" />
-          <div class="product-title" [class.selected]="d.categoryID === selectedCategory?.categoryID">
-            <h3>{{ d.categoryName }}</h3>
-          </div>
+        <!-- Category Carousel -->
+        <owl-carousel-o [options]="customOptions4" #carouselExample1 class="custom-carousel">
+          <ng-container *ngFor="let d of cat">
+            <ng-template carouselSlide>
+              <div class="products-card" (click)="onCategorySelect(d)">
+                <div class="card-wrapper" [class.selected]="d.categoryID === selectedCategory?.categoryID">
+                  <img [src]="d.categoryImage" alt="Category Image" class="pot-image" />
+                  <div class="product-title" [class.selected]="d.categoryID === selectedCategory?.categoryID">
+                    <h3>{{ d.categoryName }}</h3>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+
+
+        <div class="row">
+          <ng-container *ngIf="products.length > 0; else noProducts">
+            <!-- Show products (max 8 items) -->
+            <!-- Product Grid -->
+            <div class="row">
+              <div class="col-lg-3" *ngFor="let p of products | slice:0:8">
+                <div class="product-img" (click)="navigatess(p.userProductID)">
+                  <img [src]="p.productThumbnail" alt="Product Thumbnail">
+                  <div class="product-name">
+                    <h4>{{p.productTitle}}</h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Single View All Button shown only if there are more than 8 products -->
+              <div class="col-lg-12 text-center mt-3" *ngIf="products.length > 8">
+                <!-- Pass categoryID and categoryName from selectedCategory -->
+                <button class="btn btn-dark"
+                  (click)="navigate(selectedCategory.categoryID, selectedCategory.categoryName)">
+                  View All Products
+                </button>
+              </div>
+            </div>
+
+          </ng-container>
+
+          <!-- No products fallback message -->
+          <ng-template #noProducts class="mt-3">
+            <div class="col-lg-12 text-center">
+              <img src="../../../../assets/image/Slider/slider.png" alt="Banner" class="img-fluid mt-4" />
+            </div>
+          </ng-template>
+
+
         </div>
-      </div>
-    </ng-template>
-  </ng-container>
-</owl-carousel-o>
-
-
-<div class="row">
-  <ng-container *ngIf="products.length > 0; else noProducts">
-    <!-- Show products (max 8 items) -->
-   <!-- Product Grid -->
-<div class="row">
-  <div class="col-lg-3" *ngFor="let p of products | slice:0:8">
-    <div class="product-img" (click)="navigatess(p.userProductID)">
-      <img [src]="p.productThumbnail" alt="Product Thumbnail">
-      <div class="product-name">
-        <h4>{{p.productTitle}}</h4>
-      </div>
-    </div>
-  </div>
-
-  <!-- Single View All Button shown only if there are more than 8 products -->
-  <div class="col-lg-12 text-center mt-3" *ngIf="products.length > 8">
-    <!-- Pass categoryID and categoryName from selectedCategory -->
-    <button class="btn btn-dark" (click)="navigate(selectedCategory.categoryID, selectedCategory.categoryName)">
-      View All Products
-    </button>
-  </div>
-</div>
-
-  </ng-container>
-
-  <!-- No products fallback message -->
-  <ng-template #noProducts class="mt-3">
-    <div class="col-lg-12 text-center">
-      <img 
-      src="../../../../assets/image/Slider/slider.png" 
-      alt="Banner" 
-      class="img-fluid mt-4"
-    />
-    </div>
-  </ng-template>
-
-
-</div>
 
 
 
@@ -127,7 +124,7 @@
                   <div class="card">
                     <img [src]="d.serviceImage" alt="">
                     <div class="overlay"></div>
-          
+
                     <div class="tree-title">
                       <h3>{{ d.serviceText }}</h3>
                     </div>
@@ -271,10 +268,10 @@
       <div class="col-lg-4">
         <div class="users">
           <img src="../../../../assets/image/icons/image1.png" alt="">
-            <div class="counter">
-              {{ usersCount }}+
-            </div>
-            <p>Users</p>
+          <div class="counter">
+            {{ usersCount }}+
+          </div>
+          <p>Users</p>
         </div>
       </div>
       <div class="col-lg-4">
@@ -365,7 +362,7 @@
             </div>
             <div class="mb-4">
               <div class="submit">
-                <button class="btn" (click)="AddInquiry()" >Submit</button>
+                <button class="btn" (click)="AddInquiry()">Submit</button>
               </div>
             </div>
           </form>
@@ -374,9 +371,9 @@
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="touch-map">
           <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.5007005201105!2d72.77083457497851!3d21.132463284209205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be045ef53f5ea7f%3A0xb478a6c9ff55b6d6!2z8J2XmfCdl67wnZe_8J2XuvCdl7LwnZiB8J2XvPCdmIAg8J2Xo_Cdl7nwnZeu8J2Xu_CdmIEgJiDwnZej8J2XufCdl67wnZe78J2YgfCdl7LwnZe_IHx8IFBsYW50cyBhbmQgTnVyc2VyeSwgRlJQIFBvdHMgTWFudWZhY3R1cmUsIEZpYmVyIFBsYW50ZXJzIE1hbnVmYWN0dXJlciwgRlJQIFBsYW50ZXJzIFdob2xlc2FsZXI!5e0!3m2!1sen!2sin!4v1743139731553!5m2!1sen!2sin"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.5007005201105!2d72.77083457497851!3d21.132463284209205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be045ef53f5ea7f%3A0xb478a6c9ff55b6d6!2z8J2XmfCdl67wnZe_8J2XuvCdl7LwnZiB8J2XvPCdmIAg8J2Xo_Cdl7nwnZeu8J2Xu_CdmIEgJiDwnZej8J2XufCdl67wnZe78J2YgfCdl7LwnZe_IHx8IFBsYW50cyBhbmQgTnVyc2VyeSwgRlJQIFBvdHMgTWFudWZhY3R1cmUsIEZpYmVyIFBsYW50ZXJzIE1hbnVmYWN0dXJlciwgRlJQIFBsYW50ZXJzIFdob2xlc2FsZXI!5e0!3m2!1sen!2sin!4v1743139731553!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -387,6 +384,6 @@
 <!-- get into tocuh section end -->
 
 <!-- footer section start -->
- 
+
 <app-footer></app-footer>
- <!-- footer section end -->
+<!-- footer section end -->

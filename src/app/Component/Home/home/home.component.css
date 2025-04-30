@@ -2511,7 +2511,7 @@ width: 100%; */
 
 @media (max-width: 400px) {
     .service-card .card img {
-        height: 160px;
+        height: 180px;
     }
 }
 

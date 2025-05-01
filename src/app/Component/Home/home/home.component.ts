@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     private toast: ToastrNotificationService,
     private loader: LoaderService,
     private route: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getalldata();
@@ -121,7 +121,7 @@ export class HomeComponent implements OnInit {
       next: (resp: any) => {
         this.loader.hideLoader();
         if (resp.status === true) {
-          this.toast.showSuccess(resp.message);
+          // this.toast.showSuccess(resp.message);
           this.slider = resp.data.sliders || [];
           this.testi = resp.data.testimonials || [];
           this.ser = resp.data.services || [];
@@ -151,17 +151,17 @@ export class HomeComponent implements OnInit {
   }
 
   getproduct(categoryID: number, pageNumber: number) {
-    this.service.getproductbycategory(categoryID, pageNumber).subscribe(
-      (resp: any) => {
+    this.service
+      .getproductbycategory(categoryID, pageNumber)
+      .subscribe((resp: any) => {
         if (resp.status === true && resp.data.products) {
           this.products = resp.data.products;
         } else {
           this.products = [];
-          this.toast.showWarning('No products found for this category.');
+          // this.toast.showWarning('No products found for this category.');
         }
-      }
-    )
-  };
+      });
+  }
 
   navigate(categoryID: number, categoryName?: string) {
     console.log('Navigating to ProductList with Category ID:', categoryID);

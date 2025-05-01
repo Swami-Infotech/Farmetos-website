@@ -54,11 +54,10 @@ export class HomeComponent implements OnInit {
     private toast: ToastrNotificationService,
     private loader: LoaderService,
     private route: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getalldata();
-    this.getproduct(this.selectedCategoryID, 0);
     this.animateCounter('usersCount', 300);
     this.animateCounter('bookingCount', 300);
     this.animateCounter('customerCount', 300);
@@ -131,7 +130,7 @@ export class HomeComponent implements OnInit {
           this.cat = resp.data.categories || [];
           if (this.cat.length > 0) {
             this.activeTab = this.cat[0].categoryID;
-            this.getproduct(this.activeTab, 0);
+            // this.getproduct(this.activeTab, 0);
           }
         } else {
           this.toast.showError(resp.message);
@@ -152,22 +151,17 @@ export class HomeComponent implements OnInit {
   }
 
   getproduct(categoryID: number, pageNumber: number) {
-    this.service.getproductbycategory(categoryID, pageNumber).subscribe({
-      next: (resp: any) => {
+    this.service.getproductbycategory(categoryID, pageNumber).subscribe(
+      (resp: any) => {
         if (resp.status === true && resp.data.products) {
           this.products = resp.data.products;
         } else {
           this.products = [];
           this.toast.showWarning('No products found for this category.');
         }
-      },
-      error: (error) => {
-        this.products = [];
-        this.toast.showError('Error loading products.');
-        console.error('Error loading products:', error);
-      },
-    });
-  }
+      }
+    )
+  };
 
   navigate(categoryID: number, categoryName?: string) {
     console.log('Navigating to ProductList with Category ID:', categoryID);

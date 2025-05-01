@@ -56,9 +56,9 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  getPages(): number[] {
-    return Array(this.totalPages).fill(0).map((_, i) => i + 1);
-  }
+    getPages(): number[] {
+      return Array(this.totalPages).fill(0).map((_, i) => i + 1);
+    }
 
   goToPage(page: number) {
     if (page !== this.currentPage + 1) {
